@@ -15,5 +15,15 @@
     <!-- Webpack Dev Server reload -->
     <script src="/webpack-dev-server.js"></script>
     <% } %>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCj_sFdM-ujabM2GqKFb6BkRxWhzN-idyU",
+        databaseURL: "https://saeris-7a947.firebaseio.com"
+      };
+      firebase.initializeApp(config);
+    </script>
   </body>
 </html>
