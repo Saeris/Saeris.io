@@ -1,0 +1,17 @@
+<template>
+  <nav id="main-nav">
+    <label id="menu-toggle">
+      <i class="fa fa-bars" aria-hidden="true">
+        <input type="checkbox" checked.bind="toggle"/>
+      </i>
+    </label>
+    <ul id="menu-items">
+      <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+        <a href.bind="row.href">
+          <i class="fa fa-${row.settings.icon}" aria-hidden="true"></i>
+          <span>${row.title}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</template>

@@ -1,0 +1,82 @@
+{
+	"name": "",
+	"headline": "",
+	"contact": {
+		"email": "",
+		"phone": "",
+		"websites": [
+			{
+				"display": "",
+				"url": ""
+				}
+			],
+		"social_networks": {
+			"facebook": "",
+			"twitter": "",
+			"instagram": "",
+			"youtube": "",
+			"twitch": "",
+			"github": "",
+			"linkedin":	""
+			}
+		},
+	"objective": "",
+	"summary": "",
+	"expertise": [
+		{
+			"order": 0,
+			"skill": "",
+			"description": "",
+			"rating": 0
+			}
+	],
+ 	"experience": [
+ 		{
+ 			"company": "",
+ 			"title": "",
+ 			"start": "",
+ 			"end": "",
+ 			"location": "",
+ 			"summary": "",
+ 			"keywords": [
+ 				],
+ 			"highlights": [
+ 					{
+ 						"name": "",
+ 						"description": "",
+ 						"summary": "",
+ 						"keywords": [
+ 							],
+ 						"highlights":[
+ 								""
+ 							]
+ 						}
+ 				]
+ 			},
+ 		{
+ 			"company": "",
+ 			"title": "",
+ 			"start": "",
+ 			"end": "",
+ 			"location": "",
+ 			"summary": "",
+ 			"keywords": [
+ 				],
+ 			"hightlights": [
+ 					""
+ 				]
+ 			}
+ 	],
+ 	"education": [
+ 		{
+ 			"school": "",
+ 			"location": "",
+ 			"status": "",
+ 			"start": "",
+ 			"end": "",
+ 			"focus": "",
+ 			"achievements": [],
+ 			"keywords": []
+ 			}
+ 	]
+ }

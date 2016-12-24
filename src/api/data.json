@@ -1,0 +1,260 @@
+{
+	"name": "Drake Costa",
+	"headline": "Front-End Web Developer",
+	"contact": {
+		"email": "saeris@comcast.net",
+		"phone": "(925) 548-2801",
+		"website": {
+			"display": "Portfolio",
+			"url": "http://www.miritica.net"
+		},
+		"social_networks": {
+			"facebook": "",
+			"twitter": "",
+			"instagram": "",
+			"youtube": "",
+			"twitch": "",
+			"github": "http://www.github.com/Saeris",
+			"linkedin": "http://www.linkedin.com/in/saeris"
+		}
+	},
+	"objective": "Seeking a mid-level position in Front-End Web Development where I can utilize my unique assortment of skills and simultaneously grow. I prefer roles where I can tap into my design background to implement creative solutions to problems. An ideal setup for me would be under a senior developer whom I can turn to as a mentor and work that would allow me to improve usability and efficiency for both the end user and the team as a whole.",
+	"summary": "",
+	"expertise": [{
+		"order": 0,
+		"skill": "HTML",
+		"description": "",
+		"rating": 5
+	}, {
+		"order": 1,
+		"skill": "CSS",
+		"description": "",
+		"rating": 5
+	}, {
+		"order": 2,
+		"skill": "Javascript",
+		"description": "",
+		"rating": 3
+	}, {
+		"order": 3,
+		"skill": "PHP",
+		"description": "",
+		"rating": 4
+	}, {
+		"order": 4,
+		"skill": "MySQL",
+		"description": "",
+		"rating": 3
+	}, {
+		"order": 5,
+		"skill": "jQuery",
+		"description": "",
+		"rating": 3
+	}, {
+		"order": 6,
+		"skill": "Aurelia",
+		"description": "",
+		"rating": 2
+	}, {
+		"order": 7,
+		"skill": "Angular",
+		"description": "",
+		"rating": 1
+	}, {
+		"order": 8,
+		"skill": "React",
+		"description": "",
+		"rating": 1
+	}, {
+		"order": 9,
+		"skill": "Sass",
+		"description": "",
+		"rating": 3
+	}, {
+		"order": 10,
+		"skill": "Apache HTTP Server",
+		"description": "",
+		"rating": 3
+	}, {
+		"order": 11,
+		"skill": "Node.js",
+		"description": "",
+		"rating": 3
+	}, {
+		"order": 12,
+		"skill": "Selenium",
+		"description": "",
+		"rating": 1
+	}, {
+		"order": 13,
+		"skill": "Webpack",
+		"description": "",
+		"rating": 2
+	}, {
+		"order": 14,
+		"skill": "Gulp",
+		"description": "",
+		"rating": 2
+	}, {
+		"order": 15,
+		"skill": "Grunt",
+		"description": "",
+		"rating": 2
+	}, {
+		"order": 16,
+		"skill": "JIRA",
+		"description": "",
+		"rating": 3
+	}, {
+		"order": 17,
+		"skill": "Bugzilla",
+		"description": "",
+		"rating": 3
+	}, {
+		"order": 18,
+		"skill": "Git",
+		"description": "",
+		"rating": 3
+	}, {
+		"order": 19,
+		"skill": "Sublime Text",
+		"description": "",
+		"rating": 3
+	}, {
+		"order": 20,
+		"skill": "Microsoft Office",
+		"description": "",
+		"rating": 5
+	}, {
+		"order": 21,
+		"skill": "Adobe Creative Suite",
+		"description": "",
+		"rating": 5
+	}, {
+		"order": 22,
+		"skill": "Windows",
+		"description": "",
+		"rating": 5
+	}, {
+		"order": 23,
+		"skill": "OS X",
+		"description": "",
+		"rating": 4
+	}, {
+		"order": 24,
+		"skill": "Ubuntu Linux",
+		"description": "",
+		"rating": 3
+	}, {
+		"order": 25,
+		"skill": "Design",
+		"description": "",
+		"rating": 5
+	}, {
+		"order": 26,
+		"skill": "Problem Solving",
+		"description": "",
+		"rating": 4
+	}, {
+		"order": 27,
+		"skill": "Critical Thinking",
+		"description": "",
+		"rating": 5
+	}],
+	"experience": [{
+		"company": "Catalyst DevWorks",
+		"title": "Front-End Technical Lead",
+		"start": "August 2015",
+		"end": "February 2016",
+		"location": "Beaverton, OR",
+		"summary": "",
+		"tags": ["Agile", "Front-End Web Development", "JavaScript", "UI Design", "UX Design"],
+		"highlights": [{
+			"name": "Cambia Health Solutions",
+			"description": "Regence/Asuris Insurance Mobile Optimization Project",
+			"summary": "",
+			"tags": ["Apache Velocity", "Liferay", "Intellij IDEA", "Flexbox", "Git", "Grunt", "Java", "Sass"],
+			"highlights": [
+				"Responsible for front-end development of password recovery, message center, and member dashboard pages for <a href='https://www.regence.com/web/regence_individual/' target='_blank'>Regence BlueCross<\/a> and <a href='https://www.asuris.com/' target='_blank'>Asuris Health<\/a>.",
+				"Trained fellow developers in the use of CSS Flexbox, resulting in faster development, cleaner, more maintainable markup, and a significantly more responsive mobile experience.",
+				"Audited the front-end build chain and helped implement more efficient use of Node modules, Grunt and SASS. Upgrading to NPM 3 cut duplicate files down from roughly 2.6 million (6+ Gb) to under 30 thousand (250 Mb). As a result, full builds take 15 minutes down from over 1 hour."
+			]
+		}, {
+			"name": "Catalyst",
+			"description": "Talent Management Application",
+			"summary": "",
+			"tags": ["Aurelia", "Bootstrap", "Docker", "Gulp", "JIRA", "Project Documentation", "Sass", "SPA", "Team Leadership", "UI Design", "UX Design", "Web Components", "Wireframing"],
+			"highlights": [
+				"Took the lead on the front-end of the project, providing wire-frames, developing the user experience, and engineering the application's structure within the Aurelia framework. In the face of rapidly changing project goals, I quickly adapted to new requirements and iterated on the design to suit the needs of the product owner.",
+				"Lead a team of five junior developers, helping to bring them up to speed with project technologies such as Aurelia, Docker, and Flexbox, as well as ensuring they understood the project structure from a conceptual level.",
+				"Wrote supporting documentation for developer on-boarding, facilitating quick ramp-up times in an environment where developers are frequently rolled on and off the project."
+			]
+		}]
+	}, {
+		"company": "Sellpoints, Inc.",
+		"title": "Contract Front-End Web Developer",
+		"start": "December 2014",
+		"end": "May 2015",
+		"location": "Emeryville, CA",
+		"summary": "",
+		"tags": ["AJAX", "Bugzilla", "Front-End Web Development", "JavaScript", "jQuery", "SVG", "UI Design", "UX Design"],
+		"highlights": [
+			"Programmed a browser extension using jQuery and AJAX to automate common tasks for the production team, resulting in hundreds of work hours saved and drastically reduced error rates.",
+			"Coded the front-end for the Nicole Miller IBM Watson powered search results prototype shown at CES 2015. As a result, Sellpoints received a <a href='https://www-03.ibm.com/press/us/en/pressrelease/46950.wss' target='_blank'>$7.5 million Series C investment from IBM<\/>.",
+			"Updated Sellpoints’ collection of raster callout icons to a modern, vector-based icon font which will allow for greater customization, faster page load times, and a more consistent experience across a range of devices in the future. Result: <a href='http://saeris.github.io/sellpoints_i2/demo.html' target='_blank'>227 customizable glyphs delivered in 2 http requests, totaling 39kb/50ms<\/a>."
+		]
+	}, {
+		"company": "Blizzard Entertainment",
+		"title": "Level Design Intern",
+		"start": "June 2012",
+		"end": "September 2012",
+		"location": "Irvine, CA",
+		"summary": "",
+		"tags": ["Agile", "Balance Design", "Game Design", "Level Design", "Multiplayer Design", "StarCraft 2 Galaxy Editor", "Tortoise SVN"],
+		"highlights": [
+			"Designed <a href='http://wiki.teamliquid.net/starcraft2/Atlas_Station' target='_blank'>3<\/a> <a href='http://wiki.teamliquid.net/starcraft2/Sky_Harvester' target='_blank'>multiplayer<\/a> <a href='http://wiki.teamliquid.net/starcraft2/Vault_of_Secrets' target='_blank'>maps<\/a> which shipped with Heart of the Swarm. Each was part of the official ladder where they were played millions of times, earned high ratings and praise for fostering innovative play.",
+			"Pitched and contributed to the development of the ‘Data Navigator’ visualization tool, which assists developers and fans in understanding the complex structure of game assets, speeding their creation.",
+			"Helped develop new community engagement strategies. As a result developers now communicate directly with mod developers, helping to both educate the community and resolve tools related bugs faster."
+		]
+	}],
+	"projects": [{
+		"name": "Aurelia Webpack Resume Builder",
+		"url": "https://github.com/Saeris/aurelia_resume_builder",
+		"summary": "An online resume building application built with Aurelia, Webpack and Sass. Resumes are dynamically built inside a template from a json data source. The current build demos this functionality, with live editing and data file exports to be added soon!",
+		"start": "May 2016",
+		"end": "Present",
+		"tags": ["Aurelia", "ES6", "JavaScript", "Sass", "SPA", "Web Components", "Webpack"],
+		"highlights": []
+	}, {
+		"name": "StarCraft II Melee Data Collection Library",
+		"url": "http://www.miritica.net/apps/MDCL/index.php",
+		"summary": "",
+		"start": "September 2012",
+		"end": "March 2013",
+		"tags": ["Database Design", "Google Chart Tools", "jQuery", "MySQL", "PHP"],
+		"highlights": [
+			"Datamining project composed of a game modification that tracks over 100 data points and outputs them to an XML log file, and a PHP/MySQL based website designed to demonstrate analytical techniques.",
+			"Completely self-designed and built from scratch, this project was both a proof of concept and an effort to familiarize myself with the tools and techniques needed to build an enterprise-level web application.",
+			"The project has been entirely open-sourced and published to <a href='https://github.com/Saeris/SC2MDCL' target='_blank'>Github<\/a> and work on a new <a href='https://github.com/Saeris/Yamato-Electron' target='_blank'>JavaScript/SPA version<\/a> has begun."
+		]
+	}],
+	"education": [{
+		"school": "Gnomon School of Visual Effects",
+		"location": "Hollywood, CA",
+		"status": "Attended",
+		"start": "Fall 2011",
+		"end": "Spring 2012",
+		"focus": "Individual Courses",
+		"achievements": [],
+		"tags": ["Adobe Photoshop", "Autodesk 3DS Max", "Autodesk Maya", "Unreal Engine"]
+	}, {
+		"school": "Las Positas College",
+		"location": "Livermore, CA",
+		"status": "Graduated",
+		"start": "",
+		"end": "May 2010",
+		"focus": "AA – VISUAL COMMUNICATIONS, EMPHASIS IN PRINT + WEB DESIGN",
+		"achievements": [],
+		"tags": ["Adobe Illustrator", "Adobe Lightroom", "Adobe Photoshop", "Graphic Design", "Photography", "Typography", "Web Design"]
+	}]
+}

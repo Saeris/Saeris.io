@@ -1,0 +1,9 @@
+.two-column {
+  display: flex;
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+  .column {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

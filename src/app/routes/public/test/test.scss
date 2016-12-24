@@ -1,0 +1,29 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    flex: 1 0 auto;
+    width: 33%;
+
+    label {
+      font-size: 1.2rem;
+      line-height: 2rem;
+      margin: 0;
+
+      i {
+        font-size: 1.6rem;
+        font-weight: bold;
+        line-height: 2rem;
+        margin-right: 0.2rem;
+        cursor: pointer;
+      }
+
+      input[type="checkbox"] {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
+    }
+  }
+}
