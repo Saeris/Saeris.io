@@ -109,8 +109,9 @@ let config = generateConfig(
   generateIndexHtml({minify: ENV === `production`}),
 
   ...(ENV === `production` || ENV === `development` ? [
-    commonChunksOptimize({appChunkName: `app`, firstChunk: `aurelia-bootstrap`})
-    //copyFiles({patterns: [{ from: `favicon.ico`, to: `favicon.ico` }]})
+    commonChunksOptimize({appChunkName: `app`, firstChunk: `aurelia-bootstrap`}),
+    //copyFiles({patterns: [{ from: `favicon.ico`, to: `favicon.ico` }]}),
+    copyFiles({patterns: [{ context: `src/img`, from: `**/*`, to: `img` }]})
   ] : [
     /* ENV === 'test' */
     generateCoverage({ options: { 'force-sourcemap': true, esModules: true }})

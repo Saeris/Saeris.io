@@ -23,7 +23,7 @@ export class App {
         nav: true,
         title: `Blog`,
         settings: {
-          icon: `blog`
+          icon: `rss`
         }
       }, {
         route: [`projects`],

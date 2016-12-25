@@ -9,6 +9,9 @@ body {
   display: flex;
   min-height: 100vh;
   font-family: $font-family-sans-serif;
+  background-image: url("../img/bg.jpg");
+  background-position: center -5em;
+  background-repeat: no-repeat;
 
   .main {
     display: flex;
