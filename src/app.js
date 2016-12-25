@@ -5,6 +5,7 @@ export class App {
     this.router = router
 
     config.title = `Saeris.io`
+    config.options.pushState = true
     config.options.root = `/`
     config.map([
       {
@@ -41,7 +42,7 @@ export class App {
         nav: true,
         title: `Photography`,
         settings: {
-          icon: `photo`
+          icon: `camera-retro`
         }
       }, {
         route: [`resume`],
