@@ -1,0 +1,7 @@
+{
+  viewer {
+    avatarURL
+    name
+    location
+  }
+}
