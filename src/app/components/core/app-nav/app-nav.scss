@@ -28,6 +28,15 @@
         width: 10rem;
         height: 10rem;
         border-radius: 10rem;
+        transition: border-radius 0.2s ease-in-out;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        img {
+          border-radius: 2.5rem;
+        }
       }
 
       &:focus {

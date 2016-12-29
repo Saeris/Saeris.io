@@ -2,7 +2,7 @@
   <nav id="main-nav">
     <div id="profile">
       <button>
-        <img src.bind="profile.picture" alt="Author's Picture">
+        <img show.bind="profile.picture" src.bind="profile.picture" alt="Author's Picture">
       </button>
       <h1 if.bind="profile.name">${profile.name}</h1>
       <h2 if.bind="profile.location">${profile.location}</h2>
