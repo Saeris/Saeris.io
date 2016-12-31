@@ -1,7 +1,6 @@
 import { inject } from 'aurelia-framework'
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import { createEpicMiddleware, combineEpics } from 'redux-observable'
-import { Observable } from 'rxjs'
 import createLogger from 'redux-logger'
 import Apollo from './apollo'
 
