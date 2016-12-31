@@ -16,11 +16,11 @@ export default class Store {
   composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
   createReducer(asyncReducers) {
-    return combineReducers({ apollo: this.apollo.reducer(), pingReducer: this.pingReducer, ...asyncReducers })
+    return combineReducers({ apollo: this.apollo.reducer(), ...asyncReducers })
   }
 
   createEpic(asyncEpics = []) {
-    return combineEpics(this.pingEpic, ...asyncEpics)
+    return combineEpics(...asyncEpics)
   }
 
   configureStore() {
@@ -44,20 +44,5 @@ export default class Store {
 
   addEpic(epic) {
 
-  }
-
-  pingEpic = action$ => action$.filter(action => action.type === `PING`).mapTo({ type: `PONG` })
-
-  pingReducer = (state = { isPinging: false }, action) => {
-    switch (action.type) {
-    case `PING`:
-      return { isPinging: true }
-
-    case `PONG`:
-      return { isPinging: false }
-
-    default:
-      return state
-    }
   }
 }
