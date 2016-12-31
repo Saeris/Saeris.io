@@ -1,10 +1,14 @@
+import { inject } from 'aurelia-framework'
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import { createEpicMiddleware, combineEpics } from 'redux-observable'
 import { Observable } from 'rxjs'
 import createLogger from 'redux-logger'
+import Apollo from './apollo'
 
+@inject(Apollo)
 export default class Store {
-  constructor() {
+  constructor(apollo) {
+    this.apollo = apollo.client
     this.state = this.configureStore()
     this.state.dispatch({type: `INIT_STATE`})
   }
@@ -12,7 +16,7 @@ export default class Store {
   composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
   createReducer(asyncReducers) {
-    return combineReducers({ pingReducer: this.pingReducer, ...asyncReducers })
+    return combineReducers({ apollo: this.apollo.reducer(), pingReducer: this.pingReducer, ...asyncReducers })
   }
 
   createEpic(asyncEpics = []) {
@@ -25,7 +29,8 @@ export default class Store {
       this.createReducer(),
       this.composeEnhancers(
         applyMiddleware(loggerMiddleware),
-        applyMiddleware(createEpicMiddleware(this.createEpic()))
+        applyMiddleware(createEpicMiddleware(this.createEpic())),
+        applyMiddleware(this.apollo.middleware())
       )
     )
     store.asyncReducers = {}
