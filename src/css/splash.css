@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900');
+
 body, html {
   margin: 0;
   height: 100%;
+}
+
+.bg, #links_bg {
+  background-image: url("../img/bg.jpg");
+  background-position: center -5em;
+  background-repeat: no-repeat;
 }
 
 .splash {

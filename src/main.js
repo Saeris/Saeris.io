@@ -1,7 +1,6 @@
 import 'font-awesome/css/font-awesome.css'
 import * as Bluebird from 'bluebird'
 import 'whatwg-fetch'
-import config from './config/app.config'
 
 Bluebird.config({ warnings: false })
 

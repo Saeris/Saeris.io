@@ -3,8 +3,9 @@
  * Take a look at the README here: https://github.com/easy-webpack/core
  **/
 import { generateConfig, stripMetadata } from '@easy-webpack/core'
+import webpack from 'webpack'
 import path from 'path'
-import DotenvPlugin from 'dotenv-webpack'
+import dotenv  from 'dotenv' // https://github.com/motdotla/dotenv
 import envProd from '@easy-webpack/config-env-production'
 import envDev from '@easy-webpack/config-env-development'
 import aurelia from '@easy-webpack/config-aurelia'
@@ -21,6 +22,8 @@ import commonChunksOptimize from '@easy-webpack/config-common-chunks-simple'
 import copyFiles from '@easy-webpack/config-copy-files'
 import uglify from '@easy-webpack/config-uglify'
 import generateCoverage from '@easy-webpack/config-test-coverage-istanbul'
+
+dotenv.config()
 
 process.env.BABEL_ENV = `webpack`
 const ENV = process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() || (process.env.NODE_ENV = `development`)
@@ -110,7 +113,8 @@ let config = generateConfig(
 
   ...(ENV === `production` || ENV === `development` ? [
     commonChunksOptimize({appChunkName: `app`, firstChunk: `aurelia-bootstrap`}),
-    copyFiles({patterns: [{ from: `favicon.ico`, to: `favicon.ico` }]})
+    //copyFiles({patterns: [{ from: `favicon.ico`, to: `favicon.ico` }]}),
+    copyFiles({patterns: [{ context: `src/img`, from: `**/*`, to: `img` }]})
   ] : [
     /* ENV === 'test' */
     generateCoverage({ options: { 'force-sourcemap': true, esModules: true }})
@@ -129,11 +133,12 @@ let config = generateConfig(
     },
     module: {
       rules: [
-        { test: /\.(graphql|gql)$/, exclude: /node_modules/, loader: `graphql-tag/loader` }
+        { test: /\.(graphql|gql)$/, exclude: /node_modules/, loader: `graphql-tag/loader` },
+        { test: /\.ai$/, loader: `ignore-loader` }
       ]
     },
     plugins: [
-      new DotenvPlugin()
+      new webpack.EnvironmentPlugin([`API_KEY`])
     ]
   }
 )

@@ -4,6 +4,7 @@
       "semi": ["error", "never"],
       "quotes": [
         2, "backtick", "avoid-escape"
-      ]
+      ],
+      "object-shorthand": ["error", "consistent-as-needed"]
     }
 }
