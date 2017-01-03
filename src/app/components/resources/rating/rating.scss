@@ -1,33 +1,68 @@
-/* TODO: Get colors from the global variables */
 .rating {
-  unicode-bidi: bidi-override;
-  font-size: 2rem;
-  flex: 1 0 auto;
+  width: auto;
+  height: 100%;
 
-  .star{
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    display: inline-block;
-    padding-right: 0.25rem;
-    color: #e3cf7a;
-    &.full {
-      &:before {
-        /* fa-star */
-        content: "\f005";
-      }
-    }
-    &.half {
-      &:before {
-        /* fa-star-half-o */
-        content: "\f123";
-      }
-    }
-    &.empty {
-      &:before {
-        /* fa-star-o */
-        content: "\f006";
-      }
-    }
+  .Fill {
+    opacity: 0;
+  }
+}
+
+.one {
+  #Fill_1 {
+    opacity: 1;
+  }
+}
+
+.two {
+  #Fill_1 {
+    opacity: 1;
+  }
+  #Fill_2 {
+    opacity: 1;
+  }
+}
+
+.three {
+  #Fill_1 {
+    opacity: 1;
+  }
+  #Fill_2 {
+    opacity: 1;
+  }
+  #Fill_3 {
+    opacity: 1;
+  }
+}
+
+.four {
+  #Fill_1 {
+    opacity: 1;
+  }
+  #Fill_2 {
+    opacity: 1;
+  }
+  #Fill_3 {
+    opacity: 1;
+  }
+  #Fill_4 {
+    opacity: 1;
+  }
+}
+
+.five {
+  #Fill_1 {
+    opacity: 1;
+  }
+  #Fill_2 {
+    opacity: 1;
+  }
+  #Fill_3 {
+    opacity: 1;
+  }
+  #Fill_4 {
+    opacity: 1;
+  }
+  #Fill_5 {
+    opacity: 1;
   }
 }

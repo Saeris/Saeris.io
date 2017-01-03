@@ -21,20 +21,20 @@ export class SVGLoader {
     })
   }
 
-  async attached() {
+  async bind() {
     let svg = this.svg
     if (this.src) {
       let fragment =  await this.loadSVG(this.src)
       let contents = fragment.select(`svg`)
-      let attributes = {
-        preserveAspectRatio: `xMidYMid meet`
-      }
-      for (let i = 0; i < contents.node.attributes.length; i++) {
-        attributes[contents.node.attributes[i].name] = contents.node.attributes[i].value
-      }
-      for (let i = 0; i < contents.node.children.length; i++) {
-        svg.append(contents.node.children[i])
-      }
+      let attributes = { preserveAspectRatio: `xMidYMid meet` }
+      let attr = [].slice.call(contents.node.attributes)
+      attr.forEach(attribute => {
+        attributes[attribute.name] = attribute.value
+      })
+      let children = [].slice.call(contents.node.children)
+      children.forEach(child => {
+        svg.append(child)
+      })
       svg.attr(attributes)
     }
   }
