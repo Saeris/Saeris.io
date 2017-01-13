@@ -138,7 +138,7 @@ let config = generateConfig(
       ]
     },
     plugins: [
-      new webpack.EnvironmentPlugin([`API_KEY`])
+      new webpack.EnvironmentPlugin([`API_KEY`, `FLICKR_API_KEY`, `FLICKR_USER`])
     ]
   }
 )

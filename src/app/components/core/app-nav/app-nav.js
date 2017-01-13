@@ -13,11 +13,13 @@ export class AppNav {
   }
 
   async attached() {
+    /*
     let profile = await this.client.query({query: query})
     this.profile = {
       name: profile.data.viewer.name,
       location: profile.data.viewer.location,
       picture: profile.data.viewer.avatarURL
     }
+    */
   }
 }
