@@ -1,25 +1,34 @@
-import { inject, bindable, customElement, containerless } from 'aurelia-framework'
-import Apollo from '../../../services/apollo'
-import query from './app-nav.graphql'
+import { inject, bindable, customElement, containerless, LogManager } from 'aurelia-framework'
+import GitHub from 'github-api'
+import config from '../../../../config/app.config'
 import './app-nav.scss'
 
 @customElement(`app-nav`)
 @containerless
-@inject(Apollo)
+@inject(GitHub)
 export class AppNav {
   @bindable router
-  constructor(apollo) {
-    this.client = apollo.client
+  constructor(github) {
+    this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
+    this.gh = github
+    this.user = config.profiles.github
   }
 
-  async attached() {
-    /*
-    let profile = await this.client.query({query: query})
-    this.profile = {
-      name: profile.data.viewer.name,
-      location: profile.data.viewer.location,
-      picture: profile.data.viewer.avatarURL
+  async bind() {
+    try {
+      this.log.debug(`Fetching remote resources...`)
+      const profile = await this.gh.getUser(this.user).getProfile()
+      this.profile = {
+        name: profile.data.name,
+        location: profile.data.location,
+        picture: profile.data.avatar_url
+      }
+      this.log.debug(`Successfully retrieved remote resources.`)
+    } catch (error) {
+      this.log.error(`Failed to fetch remote resources.`, error)
     }
-    */
+  }
+
+  attached() {
   }
 }

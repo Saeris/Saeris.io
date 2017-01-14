@@ -9,8 +9,16 @@ export class Photography {
     this.api = flickr
   }
 
-  async attached() {
-    this.albums = await this.api.getAlbums()
-    this.log.debug(`6. Finished fetching albums from Flickr.`, this.albums)
+  async bind() {
+    this.log.debug(`Fetching remote resources...`)
+    try {
+      this.albums = await this.api.getAlbums()
+      this.log.debug(`Successfully retrieved remote resources.`)
+    } catch (error) {
+      this.log.error(`Failed to fetch remote resources.`, error)
+    }
+  }
+
+  attached() {
   }
 }

@@ -1,7 +1,11 @@
 class Config {
   api = {
-    token: process.env.API_KEY,
+    token: ``,
     uri: `https://api.github.com/graphql`
+  }
+
+  profiles = {
+    github: `saeris`
   }
 
   flickr = {
