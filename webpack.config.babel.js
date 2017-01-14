@@ -114,7 +114,10 @@ let config = generateConfig(
   ...(ENV === `production` || ENV === `development` ? [
     commonChunksOptimize({appChunkName: `app`, firstChunk: `aurelia-bootstrap`}),
     //copyFiles({patterns: [{ from: `favicon.ico`, to: `favicon.ico` }]}),
-    copyFiles({patterns: [{ context: `src/img`, from: `**/*`, to: `img` }]})
+    copyFiles({patterns: [
+      { context: `src/img`, from: `**/*`, to: `img` },
+      { from: `404.html`, to: `404.html` }
+    ]})
   ] : [
     /* ENV === 'test' */
     generateCoverage({ options: { 'force-sourcemap': true, esModules: true }})
@@ -138,7 +141,7 @@ let config = generateConfig(
       ]
     },
     plugins: [
-      new webpack.EnvironmentPlugin([`API_KEY`])
+      new webpack.EnvironmentPlugin([`API_KEY`, `FLICKR_API_KEY`, `FLICKR_USER`])
     ]
   }
 )

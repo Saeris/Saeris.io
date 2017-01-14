@@ -53,6 +53,12 @@ export class App {
           icon: `camera-retro`
         }
       }, {
+        route: [`photography/:id/`],
+        name: `gallery`,
+        moduleId: `app/routes/public/photography/gallery/gallery`,
+        nav: false,
+        title: `Gallery`
+      }, {
         route: [`resume`],
         name: `resume`,
         moduleId: `app/routes/public/resume/resume`,
