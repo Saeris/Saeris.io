@@ -1,10 +1,11 @@
-import { inject } from 'aurelia-framework'
+import { inject, LogManager } from 'aurelia-framework'
 import Store from './app/services/store'
 import './sass/global.scss'
 
 @inject(Store)
 export class App {
   constructor(store) {
+    this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
     this.store = store
     this.state = store.state
   }

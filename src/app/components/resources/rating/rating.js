@@ -1,4 +1,4 @@
-import { customElement, containerless, bindable } from 'aurelia-framework'
+import { customElement, containerless, LogManager, bindable } from 'aurelia-framework'
 import './rating.scss'
 import img from '../../../../img/rating.svg'
 
@@ -8,6 +8,7 @@ export class Rating {
   @bindable score
 
   constructor() {
+    this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
     this.img = img
   }
 

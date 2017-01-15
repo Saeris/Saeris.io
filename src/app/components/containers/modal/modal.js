@@ -1,4 +1,4 @@
-import { customElement, containerless, inject } from 'aurelia-framework'
+import { customElement, containerless, inject, LogManager } from 'aurelia-framework'
 import Store from '../../../services/store'
 
 @customElement(`modal`)
@@ -6,6 +6,7 @@ import Store from '../../../services/store'
 @inject(Store)
 export class Modal {
   constructor(store) {
+    this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
     this.store = store
     this.store.subscribe(this.update.bind(this))
     this.store.addReducer({modal: this.modalReducer()})

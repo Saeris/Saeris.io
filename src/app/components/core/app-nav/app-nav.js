@@ -1,4 +1,4 @@
-import { inject, bindable, customElement, containerless, LogManager } from 'aurelia-framework'
+import { customElement, containerless, inject, bindable, LogManager } from 'aurelia-framework'
 import GitHub from 'github-api'
 import config from '../../../../config/app.config'
 import './app-nav.scss'

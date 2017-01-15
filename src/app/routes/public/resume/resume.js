@@ -1,3 +1,4 @@
+import { LogManager } from "aurelia-framework"
 import moment from 'moment'
 import './resume.scss'
 
@@ -55,7 +56,8 @@ export class Resume {
   		{ name: `Ubuntu`, rating: 2, level: `Intermediate`, years: 5 }
   	],
 
-  	jobs: [{
+  	jobs: [
+    {
   		company: `4-Tell`,
   		title: `UI/UX Developer`,
   		start: `October 2016`,
@@ -135,7 +137,8 @@ export class Resume {
   		assignments: []
 	  }],
 
-  	projects: [{
+  	projects: [
+    {
       name: `Saeris.io`,
       url: `http://www.saeris.io`,
       start: `December 2016`,
@@ -217,6 +220,7 @@ export class Resume {
   }
 
   constructor() {
+    this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
   }
 
   attached() {
