@@ -65,7 +65,7 @@ export default class Flickr {
   async getAlbums(user = this.user) {
     const options = {
       user_id: user,
-      primary_photo_extras: [`url_m`, `url_o`]
+      primary_photo_extras: [`url_l`, `url_o`]
     }
     const storedAlbums = this.state.getState().flickr.albums
     if (storedAlbums.length) {
