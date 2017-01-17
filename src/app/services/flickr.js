@@ -1,4 +1,5 @@
-import { LogManager } from "aurelia-framework"
+import { inject, LogManager } from "aurelia-framework"
+import Store from './store'
 import Album from '../models/album'
 import Photo from '../models/photo'
 import config from '../../config/app.config'
@@ -9,13 +10,33 @@ import config from '../../config/app.config'
  * - Integrate with Redux (persist results to store)
  * - Memoize all fetch operations based on store lookups
  */
-
+@inject(Store)
 export default class Flickr {
-  constructor() {
+  constructor(store) {
     this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
+    this.store = store
+    this.state = store.state
+    this.store.addReducer(`flickr`, this.flickr)
     this.endpoint = config.flickr.endpoint
     this.key = config.flickr.key
     this.user = config.flickr.user
+  }
+
+  initialState = {
+    albums: []
+  }
+
+  actions = {
+    FETCH_ALBUMS: `FETCH_ALBUMS`
+  }
+
+  flickr = ( state = this.initialState, action ) => {
+    switch (action.type) {
+    case this.actions.FETCH_ALBUMS:
+      return { ...state, albums: action.payload }
+    default:
+      return state
+    }
   }
 
   /**
@@ -46,17 +67,40 @@ export default class Flickr {
       user_id: user,
       primary_photo_extras: [`url_m`, `url_o`]
     }
+    const storedAlbums = this.state.getState().flickr.albums
+    if (storedAlbums.length) {
+      this.log.debug(`Returning existing albums from state...`, storedAlbums)
+      return storedAlbums
+    }
     try {
       this.log.debug(`Getting Albums for user: '${user}'...`, options)
       const results = await this.request(`flickr.photosets.getList`, options)
       const albums = await Promise.all(
         results.photosets.photoset.map(async album => new Album(album, await this.getAlbumPhotos(album.id)))
       )
-      this.log.debug(`Successfully retrieved albums!`, albums)
+      this.log.debug(`Successfully retrieved albums! Persisting to state...`, albums)
+      this.store.state.dispatch({ type: this.actions.FETCH_ALBUMS, payload: albums })
       return albums
     } catch (error) {
-      this.log.error(`Failed to retrieve albums.`, error)
-      return []
+      this.log.error(`Failed to retrieve albums. Returning stored albums.`, error)
+      return storedAlbums
+    }
+  }
+
+  async getAlbumBySlug(slug, user = this.user) {
+    const storedAlbum = this.state.getState().flickr.albums
+      .filter(album => album.slug === slug)[0]
+    if (storedAlbum) {
+      this.log.debug(`Successfully retrieved album!`, storedAlbum)
+      return storedAlbum
+    }
+    try {
+      this.log.debug(`Getting Album: '${slug}'...`)
+      const albums = await this.getAlbums(user)
+      this.log.debug(`Successfully retrieved album!`)
+      return albums.filter(album => album.slug === slug)[0]
+    } catch (error) {
+      this.log.error(`Failed to retrieve album.`, error)
     }
   }
 
