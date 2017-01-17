@@ -1,0 +1,99 @@
+#photography {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #galleries {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    $margin_width: 3rem;
+    width: calc(100% - (#{$margin_width} * 2));
+    margin: 1.5rem $margin_width;
+    max-width: 128rem;
+
+    .album {
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 auto;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      a {
+        $cut: 2.5rem;
+        flex: 0 0 auto;
+        position: relative;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        clip-path: polygon($cut 0%, 100% 0%, 100% calc(100% - #{$cut}), calc(100% - #{$cut}) 100%, 0% 100%, 0% $cut);
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-width: $cut $cut 0 0;
+          border-style: solid;
+          border-color: transparent;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          border-width: 0 0 $cut $cut;
+          border-style: solid;
+          border-color: transparent;
+        }
+
+        .preview {
+          display: flex;
+          flex-direction: column;
+          flex: 0 0 auto;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 30rem;
+
+          img {
+            flex: 0 0 auto;
+            position: relative;
+            width: 100%;
+            transition: width 0.2s ease-in-out;
+          }
+
+          h2 {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 5rem;
+            color: #ebebeb;
+            font-family: "Orbitron";
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding-left: 1.5rem;
+            margin: 0;
+            transition: color 0.2s ease-in-out;
+          }
+
+          &:hover {
+            img {
+              width: 105%;
+            }
+
+            h2 {
+              text-decoration: none;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
