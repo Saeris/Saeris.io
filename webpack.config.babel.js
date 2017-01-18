@@ -20,7 +20,7 @@ import globalRegenerator from '@easy-webpack/config-global-regenerator'
 import generateIndexHtml from '@easy-webpack/config-generate-index-html'
 import commonChunksOptimize from '@easy-webpack/config-common-chunks-simple'
 import copyFiles from '@easy-webpack/config-copy-files'
-import uglify from '@easy-webpack/config-uglify'
+//import uglify from '@easy-webpack/config-uglify'
 import generateCoverage from '@easy-webpack/config-test-coverage-istanbul'
 
 dotenv.config()
@@ -125,16 +125,47 @@ let config = generateConfig(
   ]),
 
   ENV === `production` ?
-    uglify({debug: false, mangle: { except: [`cb`, `__webpack_require__`] }}) : {},
+    //uglify({debug: false, mangle: { except: [`cb`, `__webpack_require__`] }}) : {},
+  {
+    plugins: [
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+          screw_ie8: true,
+          conditionals: true,
+          unused: true,
+          comparisons: true,
+          sequences: true,
+          dead_code: true,
+          evaluate: true,
+          join_vars: true,
+          if_return: true
+        },
+        output: {
+          comments: false
+        }
+      })
+    ]} : { plugins: [
+      new webpack.optimize.UglifyJsPlugin({
+        beautify: true,
+        mangle: false,
+        dead_code: true,
+        unused: true,
+        compress: {
+          screw_ie8: true,
+          keep_fnames: true,
+          drop_debugger: false,
+          dead_code: true,
+          unused: true,
+          warnings: false
+        },
+        comments: true
+      })
+    ]},
 
   ENV === `development` ? { performance: { hints: false } } : {},
 
   {
-    resolve: {
-      alias: {
-        'crossfilter': `crossfilter2`
-      }
-    },
     module: {
       rules: [
         { test: /\.(graphql|gql)$/, exclude: /node_modules/, loader: `graphql-tag/loader` },
