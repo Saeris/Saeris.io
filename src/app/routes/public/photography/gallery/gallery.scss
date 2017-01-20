@@ -1,0 +1,25 @@
+#gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #header {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  #photos {
+    display: flex;
+    flex: 1 0 auto;
+    $margin_width: 3rem;
+    width: calc(100% - (#{$margin_width} * 2));
+    margin: 1.5rem $margin_width;
+    max-width: 128rem;
+
+    masonry {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
