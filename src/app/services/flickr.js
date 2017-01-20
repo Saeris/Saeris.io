@@ -65,7 +65,7 @@ export default class Flickr {
   async getAlbums(user = this.user) {
     const options = {
       user_id: user,
-      primary_photo_extras: [`url_l`, `url_o`]
+      primary_photo_extras: [`url_q`, `url_t`, `url_s`, `url_m`, `url_l`, `url_o`]
     }
     const storedAlbums = this.state.getState().flickr.albums
     if (storedAlbums.length) {
@@ -111,7 +111,7 @@ export default class Flickr {
     const options = {
       user_id: user,
       photoset_id: album,
-      extras: [`tags`, `url_m`, `url_o`]
+      extras: [`tags`, `url_q`, `url_t`, `url_s`, `url_m`, `url_l`, `url_o`]
     }
     try {
       this.log.debug(`Getting Photos for album: '${album}'...`, options)

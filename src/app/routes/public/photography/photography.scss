@@ -23,6 +23,7 @@
         position: relative;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.9);
+        overflow: hidden;
         clip-path: polygon($cut 0%, 100% 0%, 100% calc(100% - #{$cut}), calc(100% - #{$cut}) 100%, 0% 100%, 0% $cut);
 
         &:before {
@@ -57,8 +58,8 @@
           img {
             flex: 0 0 auto;
             position: relative;
-            width: 100%;
-            transition: width 0.2s ease-in-out;
+            min-width: 100%;
+            transition: transform 0.2s ease-in-out;
           }
 
           h2 {
@@ -81,7 +82,7 @@
 
           &:hover {
             img {
-              width: 105%;
+              transform: scale(1.05);
             }
 
             h2 {
