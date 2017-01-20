@@ -1,4 +1,3 @@
-import { customElement, containerless, bindable, LogManager } from 'aurelia-framework'
 import smartcrop from 'smartcrop'
 import './thumbnail.scss'
 

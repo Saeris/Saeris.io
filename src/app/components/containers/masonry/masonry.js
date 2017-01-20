@@ -1,4 +1,4 @@
-import { customElement, children, bindable, LogManager } from 'aurelia-framework'
+import { children } from 'aurelia-framework'
 import Nested from '../../../services/nested'
 
 @customElement(`masonry`)

@@ -1,5 +1,3 @@
-import { LogManager } from "aurelia-framework"
-
 (($, sr) => {
   const debounce = (func, threshold, execAsap) => {
     let timeout
