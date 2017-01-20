@@ -18,6 +18,7 @@ export class Masonry {
   }
 
   setBoxSize(photo) {
+    photo.exif
   }
 
   detached() {

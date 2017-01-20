@@ -122,4 +122,17 @@ export default class Flickr {
       this.log.error(`Failed to retrieve Photos.`, error)
     }
   }
+
+  async getPhotoExif(id) {
+    const options = {
+      photo_id: id
+    }
+    try {
+      this.log.debug(`Geting exif data for photo: '${id}'`, options)
+      const results = await this.request(`flickr.photos.getExif`, options)
+      this.log.debug(`Successfully retrieved exif data!`, results)
+    } catch (error) {
+      this.log.error(`Failed to retrieve exif data.`, error)
+    }
+  }
 }
