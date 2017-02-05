@@ -1,10 +1,18 @@
 {
   "extends": "./node_modules/aurelia-tools/.eslintrc.json",
+  "env": {
+    "browser": true
+  },
+  "plugins": ["compat"],
   "rules": {
-      "semi": ["error", "never"],
-      "quotes": [
-        2, "backtick", "avoid-escape"
-      ],
-      "object-shorthand": ["error", "consistent-as-needed"]
-    }
+    "semi": ["error", "never"],
+    "quotes": [
+      2, "backtick", "avoid-escape"
+    ],
+    "object-shorthand": ["error", "consistent-as-needed"],
+    "compat/compat": 2
+  },
+  "settings": {
+    "polyfills": ["fetch"]
+  }
 }

@@ -10,10 +10,7 @@
   overflow: hidden;
   border-radius: 1rem;
 
-  img {
-    flex: 0 0 auto;
-    position: relative;
-    z-index: 1;
+  canvas {
     min-width: 100%;
     min-height: 100%;
   }

@@ -35,18 +35,18 @@ export default class Nested {
     this.box = this.element
     this.options = {...this.defaults, ...options}
     this.elements = []
-    this._isResizing = false
-    this._update = true
+    this.isResizing = false
+    this.update = true
     this.maxy = []
 
     // add smartresize
     $(window).smartresize(() => this.resize())
 
     // build box dimensions
-    this._setBoxes()
+    this.setBoxes()
   }
 
-  _setBoxes(elements, method) {
+  setBoxes(elements, method) {
     this.idCounter = 0
     this.counter = 0
     this.maxHeight = 0
@@ -70,22 +70,22 @@ export default class Nested {
       this.idCounter++
 
       // render grid
-      this._renderGrid($(el), method)
+      this.renderGrid($(el), method)
     })
 
     // position grid
     if (this.counter === this.total.length) {
       // if option resizeToFit is true
       if (this.options.resizeToFit) {
-        this.elements = this._fillGaps()
+        this.elements = this.fillGaps()
       }
-      this._renderItems(this.elements)
+      this.renderItems(this.elements)
       // reset elements
       this.elements = []
     }
   }
 
-  _addMatrixRow(y) {
+  addMatrixRow(y) {
     if (this.matrix[y]) return false
 
     this.matrix[y] = {}
@@ -96,7 +96,7 @@ export default class Nested {
     }
   }
 
-  _updateMatrix(el) {
+  updateMatrix(el) {
     const t = parseInt(el.y, 10)
     const l = parseInt(el.x, 10)
     for (let h = 0; h < el.height; h += (this.options.minWidth + this.options.gutter)) {
@@ -104,23 +104,23 @@ export default class Nested {
         let x = l + w
         let y = t + h
         if (!this.matrix[y]) {
-          this._addMatrixRow(y)
+          this.addMatrixRow(y)
         }
         this.matrix[y][x] = `true`
       }
     }
   }
 
-  _getObjectSize(obj) {
+  getObjectSize(obj) {
     let size = 0
     $.each(obj, (p, v) => size++)
     return size
   }
 
-  _fillGaps() {
+  fillGaps() {
     let box = {}
 
-    this.elements.forEach(el => this._updateMatrix(el))
+    this.elements.forEach(el => this.updateMatrix(el))
 
     let elements = this.elements
     elements.sort((a, b) => a.y - b.y)
@@ -133,7 +133,7 @@ export default class Nested {
     let actualY = 0
 
     // Current number of rows in matrix
-    let rowsLeft = this._getObjectSize(this.matrix)
+    let rowsLeft = this.getObjectSize(this.matrix)
 
     $.each(this.matrix, (y, row) => {
       rowsLeft--
@@ -158,9 +158,9 @@ export default class Nested {
           box.h + (parseInt(addonHeight, 10) / (this.options.minWidth + this.options.gutter) === rowsLeft) ? 0 : parseInt(addonHeight, 10)
           box.ready = true
         } else if (box.ready) {
-          $.each(arr, (i, el) => {
-            if (box.y <= arr[i].y && (this.options.resizeToFitOptions.resizeAny || box.w <= arr[i].width && box.h <= arr[i].height)) {
-              arr.splice(i, 1)
+          $.each(elements, (i, el) => {
+            if (box.y <= elements[i].y && (this.options.resizeToFitOptions.resizeAny || box.w <= elements[i].width && box.h <= elements[i].height)) {
+              elements.splice(i, 1)
               $(el.element).addClass(`nested-moved`)
               this.elements.push({
                 element: $(el.element),
@@ -180,7 +180,7 @@ export default class Nested {
     return this.elements
   }
 
-  _renderGrid(box, method) {
+  renderGrid(box, method) {
     this.counter++
     let gridy = 0
     let direction = !method ? `append` : `prepend`
@@ -208,7 +208,7 @@ export default class Nested {
       for (let column = 0; column < (this.columns - col); column++) {
         // Add default empty matrix, used to calculate and update matrix for each box
         let matrixY = gridy * (this.options.minWidth + this.options.gutter)
-        this._addMatrixRow(matrixY)
+        this.addMatrixRow(matrixY)
 
         let fits = true
 
@@ -233,7 +233,7 @@ export default class Nested {
           }
 
           // Push to elements array
-          this._pushItem(box, column * (this.options.minWidth + this.options.gutter), gridy * (this.options.minWidth + this.options.gutter), width, height, col, row, direction)
+          this.pushItem(box, column * (this.options.minWidth + this.options.gutter), gridy * (this.options.minWidth + this.options.gutter), width, height, col, row, direction)
           return
         }
       }
@@ -241,7 +241,7 @@ export default class Nested {
     }
   }
 
-  _pushItem(element, x, y, w, h, cols, rows, method) {
+  pushItem(element, x, y, w, h, cols, rows, method) {
     (method === `prepend`) ?  this.elements.unshift({
       element: element,
       x: x,
@@ -261,7 +261,7 @@ export default class Nested {
     })
   }
 
-  _setHeight(elements) {
+  setHeight(elements) {
     elements.forEach(el => {
       const colY = (el.y + el.height)
       if (colY > this.maxHeight) this.maxHeight = colY
@@ -269,7 +269,7 @@ export default class Nested {
     return this.maxHeight
   }
 
-  _setWidth(elements) {
+  setWidth(elements) {
     elements.forEach(el => {
       const colX = (el.x + el.width)
       if (colX > this.currWidth) this.currWidth = colX
@@ -277,9 +277,9 @@ export default class Nested {
     return this.currWidth
   }
 
-  _renderItems(elements) {
+  renderItems(elements) {
     // set container height and width
-    this.box.css(`height`, this._setHeight(elements))
+    this.box.css(`height`, this.setHeight(elements))
 
     elements.reverse()
 
@@ -300,32 +300,32 @@ export default class Nested {
   }
 
   append(elements) {
-    this._isResizing = true
-    this._setBoxes(elements, `append`)
-    this._isResizing = false
+    this.isResizing = true
+    this.setBoxes(elements, `append`)
+    this.isResizing = false
   }
 
   prepend(elements) {
-    this._isResizing = true
-    this._setBoxes(elements, `prepend`)
-    this._isResizing = false
+    this.isResizing = true
+    this.setBoxes(elements, `prepend`)
+    this.isResizing = false
   }
 
   resize(elements) {
     if (Object.keys(this.matrix[0]).length % Math.floor(this.element.width() / (this.options.minWidth + this.options.gutter)) > 0) {
-      this._isResizing = true
-      this._setBoxes(this.box.find(this.options.selector))
-      this._isResizing = false
+      this.isResizing = true
+      this.setBoxes(this.box.find(this.options.selector))
+      this.isResizing = false
     }
   }
 
   refresh(options = this.options) {
     this.options = {...this.defaults, ...options}
     this.elements = []
-    this._isResizing = false
+    this.isResizing = false
 
     // build box dimensions
-    this._setBoxes()
+    this.setBoxes()
   }
 
   destroy() {

@@ -71,6 +71,20 @@ const coreBundles = {
     `aurelia-templating-binding`,
     `aurelia-templating-router`,
     `aurelia-templating-resources`
+  ],
+  vendor: [
+    `apollo-client`,
+    `github-api`,
+    `jquery.facedetection`,
+    `moment`,
+    `numeral`,
+    `redux`,
+    `redux-logger`,
+    `redux-observable`,
+    `rxjs`,
+    `smartcrop`,
+    `snapsvg-cjs`,
+    `tracking`
   ]
 }
 
@@ -97,7 +111,8 @@ let config = generateConfig(
     entry: {
       'app': [`./src/main` /* this is filled by the aurelia-webpack-plugin */],
       'aurelia-bootstrap': coreBundles.bootstrap,
-      'aurelia': coreBundles.aurelia.filter(pkg => coreBundles.bootstrap.indexOf(pkg) === -1)
+      'aurelia': coreBundles.aurelia.filter(pkg => coreBundles.bootstrap.indexOf(pkg) === -1),
+      'vendor': coreBundles.vendor.filter(pkg => coreBundles.bootstrap.indexOf(pkg) === -1)
     },
     output: {
       path: outDir
@@ -161,23 +176,7 @@ let config = generateConfig(
           comments: false
         }
       })
-    ]} : { plugins: [
-      new webpack.optimize.UglifyJsPlugin({
-        beautify: true,
-        mangle: false,
-        dead_code: true,
-        unused: true,
-        compress: {
-          screw_ie8: true,
-          keep_fnames: true,
-          drop_debugger: false,
-          dead_code: true,
-          unused: true,
-          warnings: false
-        },
-        comments: true
-      })
-    ]},
+    ]} : {},
 
   ENV === `development` ? { performance: { hints: false } } : {},
 
