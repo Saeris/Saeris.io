@@ -1,9 +1,7 @@
 <template>
-  <ul class="masonry" ref="container">
-    <li repeat.for="photo of album.photos" class="box ${setBoxSize(photo)}">
-      <a href="">
-        <thumbnail src.bind="photo.small.url"></thumbnail>
-      </a>
-    </li>
-  </ul>
+  <div class="masonry" ref="container">
+    <a repeat.for="photo of album.photos" class="box ${setBoxSize(photo.medium)}" href="">
+      <thumbnail src.bind="photo.medium.url"></thumbnail>
+    </a>
+  </div>
 </template>
