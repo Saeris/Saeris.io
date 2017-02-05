@@ -48,7 +48,12 @@ export default class Photo {
   }
 
   async getExifData() {
-    let exif = await this.api.getPhotoExif(this.id)
+    this.exif = await this.api.getPhotoExif(this.id)
+    this.log.debug(this.exif)
+  }
+
+  getBoxSize() {
+
   }
 
   aspectRatio = (a, b) => (b === 0) ? a : this.aspectRatio(b, a % b)

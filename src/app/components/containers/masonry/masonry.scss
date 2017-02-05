@@ -1,66 +1,59 @@
 .masonry {
+	$size: 20rem;
 	flex: 1 0 auto;
 	width: 100%;
+	max-width: calc(#{$size} * 6);
 	position: relative;
-
-	$size: 20rem;
-
-	.size21 {
-		width: calc(#{$size} * 2);
-	}
-
-	.size22 {
-		width: calc(#{$size} * 2);
-		height: calc(#{$size} * 2);
-	}
-
-	.size23 {
-		width: calc(#{$size} * 2);
-		height: calc(#{$size} * 3);
-	}
-
-	.size31 {
-		width: calc(#{$size} * 3);
-	}
-
-	.size32 {
-		width: calc(#{$size} * 3);
-		height: calc(#{$size} * 2);
-	}
-
-	.size33 {
-		width: calc(#{$size} * 3);
-		height: calc(#{$size} * 3);
-	}
-
-	.size21, .size22, .size23, .twocols { background: #ccc }
-	.size31, .size32, .size33, .threecols { background: #ff9999 }
 
 	.box {
 		display: flex;
 		position: absolute;
 		width: $size;
 		height: $size;
+		color: inherit;
+		text-decoration: none;
 		padding: 0.5rem;
-	  transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
-	  transition-property: left, right, top;
-		transition: padding 0.2s ease-in-out;
-
-		a {
-			display: flex;
-			flex: 0 0 auto;
-			justify-content: center;
-			align-items: center;
-			position: relative;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			color: inherit;
-			text-decoration: none;
-		}
+		overflow: hidden;
+		transition: 0.2s ease-in-out;
 
 		&:hover {
-			padding: 0;
+			transform: scale(1.05);
+		}
+
+		&.size12 {
+			height: calc(#{$size} * 2);
+		}
+
+		&.size13 {
+			height: calc(#{$size} * 3);
+		}
+
+		&.size21 {
+			width: calc(#{$size} * 2);
+		}
+
+		&.size22 {
+			width: calc(#{$size} * 2);
+			height: calc(#{$size} * 2);
+		}
+
+		&.size23 {
+			width: calc(#{$size} * 2);
+			height: calc(#{$size} * 3);
+		}
+
+		&.size31 {
+			width: calc(#{$size} * 3);
+		}
+
+		&.size32 {
+			width: calc(#{$size} * 3);
+			height: calc(#{$size} * 2);
+		}
+
+		&.size33 {
+			width: calc(#{$size} * 3);
+			height: calc(#{$size} * 3);
 		}
 	}
 }
