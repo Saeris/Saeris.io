@@ -1,4 +1,4 @@
-import { customElement, containerless, inject } from 'aurelia-framework'
+import { customElement, containerless, inject, LogManager } from 'aurelia-framework'
 import Utilities from '../../../services/utilities'
 import './scrollable.scss'
 
@@ -16,7 +16,7 @@ export class Scrollable {
   // NOTE: https://github.com/Grsmto/simplebar/blob/master/src/simplebar.js#L42
   // TODO: Add custom configuration options
   constructor(utilities, config) {
-    // Import Utilities service to get browser scrollbar width
+    this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
     this.utilities = utilities
   }
 

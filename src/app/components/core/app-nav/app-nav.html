@@ -1,29 +1,37 @@
 <template>
+  <aside id="about">
+    <section>
+
+    </section>
+  </aside>
+
   <nav id="main-nav">
-    <div id="profile">
-      <button>
-        <img show.bind="profile.picture" src.bind="profile.picture" alt="Author's Picture">
-      </button>
-      <h1 if.bind="profile.name">${profile.name}</h1>
-      <h2 if.bind="profile.location">${profile.location}</h2>
-    </div>
+    <section class="nav-wrapper">
+      <div id="profile">
+        <button  title="About Me">
+          <img show.bind="profile.picture" src.bind="profile.picture" alt="Author's Picture">
+        </button>
+        <h1 if.bind="profile.name">${profile.name}</h1>
+        <h2 if.bind="profile.location">${profile.location}</h2>
+      </div>
 
-    <ul class="nav-links">
-      <li repeat.for="route of router.navigation" class="${route.isActive ? 'active' : ''}">
-        <a href.bind="route.href">
-          <i class="fa fa-${route.settings.icon}" aria-hidden="true"></i>
-          <span>${route.title}</span>
-        </a>
-      </li>
-    </ul>
+      <ul id="sitenav" class="nav-links">
+        <li repeat.for="route of router.navigation" class="${route.isActive ? 'active' : ''}">
+          <a href.bind="route.href" title="${route.title}">
+            <i class="fa fa-${route.settings.icon}" aria-hidden="true"></i>
+            <span>${route.title}</span>
+          </a>
+        </li>
+      </ul>
 
-    <ul class="nav-links">
-      <li repeat.for="profile of socialMedia">
-        <a href.bind="profile.href">
-          <i class="fa fa-${profile.settings.icon}" aria-hidden="true"></i>
-          <span>${profile.title}</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+      <ul id="socialnav" class="nav-links">
+        <li repeat.for="profile of services">
+          <a href.bind="profile.url" title="${profile.name}" target="_blank">
+            <i class="fa fa-${profile.icon}" aria-hidden="true"></i>
+            <span>${profile.name}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    </section>
 </template>

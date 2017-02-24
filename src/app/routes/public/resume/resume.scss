@@ -1,8 +1,5 @@
 #resume {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+  
   #title {
     display: flex;
     flex: 0 0 auto;
@@ -322,7 +319,7 @@
 
           span {
             display: inline-block;
-            flex: 0 0 auto;
+            flex: 1 0 auto;
 
             &:last-child {
               text-align: right;
@@ -332,7 +329,7 @@
 
         .skill_rating {
           font-size: 1.6rem;
-          
+
           div {
             display: inline-block;
             width: auto;
