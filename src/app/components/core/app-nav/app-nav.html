@@ -1,14 +1,19 @@
 <template>
-  <aside id="about">
+  <aside id="about" ref="about">
     <section>
-
+      <button click.delegate="toggleAbout($event)"><i class="fa fa-remove"></i></button>
+      <img show.bind="profile.picture" src.bind="profile.picture" alt="Author's Picture">
+      <h1 if.bind="profile.name">${profile.name}</h1>
+      <h2 if.bind="profile.title"><i class="fa fa-briefcase"></i>${profile.job}</h2>
+      <h2 if.bind="profile.location"><i class="fa fa-map-marker"></i>${profile.location}</h2>
+      <p if.bind="profile.bio">${profile.bio}</p>
     </section>
   </aside>
 
-  <nav id="main-nav">
+  <nav id="main-nav" ref="nav">
     <section class="nav-wrapper">
       <div id="profile">
-        <button  title="About Me">
+        <button click.delegate="toggleAbout($event)" title="About Me">
           <img show.bind="profile.picture" src.bind="profile.picture" alt="Author's Picture">
         </button>
         <h1 if.bind="profile.name">${profile.name}</h1>

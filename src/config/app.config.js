@@ -33,7 +33,8 @@ class Config {
     {name: `Instagram`, id: `saeris.io`, icon: `instagram`, nav: true, url: `http://www.instagram.com/saeris.io/`},
     {name: `LinkedIn`, id: `saeris`, icon: `linkedin`, nav: true, url: `http://www.linkedin.com/in/saeris`},
     {name: `Twitch`, id: `ansrath`, icon: `twitch`, nav: true, url: `http://www.twitch.tv/ansrath`},
-    {name: `Twitter`, id: `saeris`, icon: `twitter`, nav: true, url: `http://www.twitter.com/saeris`}
+    {name: `Twitter`, id: `saeris`, icon: `twitter`, nav: true, url: `http://www.twitter.com/saeris`},
+    {name: `Steam`, id: `saeris`, icon: `steam`, nav: true, url: `http://steamcommunity.com/id/ansrath`}
   ]
 
   flickr = {

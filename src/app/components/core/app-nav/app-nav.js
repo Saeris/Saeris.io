@@ -22,7 +22,8 @@ export class AppNav {
       this.profile = {
         name: profile.data.name,
         location: profile.data.location,
-        picture: profile.data.avatar_url
+        picture: profile.data.avatar_url,
+        bio: profile.data.bio
       }
       this.log.debug(`Successfully retrieved remote resources.`)
     } catch (error) {
@@ -31,5 +32,10 @@ export class AppNav {
   }
 
   attached() {
+  }
+
+  toggleAbout($event) {
+    $(this.about).toggleClass(`active`)
+    $(this.nav).toggle()
   }
 }
