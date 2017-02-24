@@ -1,9 +1,8 @@
-import { LogManager } from 'aurelia-framework'
-import { ConsoleAppender } from 'aurelia-logging-console'
+import { LogManager } from "aurelia-framework"
+import { ConsoleAppender } from "aurelia-logging-console"
 import 'font-awesome/css/font-awesome.css'
 import * as Bluebird from 'bluebird'
 import 'whatwg-fetch'
-import config from './config/app.config'
 
 Bluebird.config({ warnings: false })
 
@@ -22,9 +21,6 @@ export async function configure(aurelia) {
     .feature(`app/components/core`)
     .feature(`app/components/resources`)
     .feature(`app/converters`)
-    // Aurelia-API Endpoint configuration
-    // https://aurelia-api.spoonx.org/
-    .plugin(`aurelia-api`, config.api)
 
   await aurelia.start()
   aurelia.setRoot(`app`)

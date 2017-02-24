@@ -7,21 +7,16 @@
 
 body {
   display: flex;
-  margin: 0;
-  height: 100vh;
   min-height: 100vh;
   background-image: url("../img/bg.jpg");
   background-position: center -5em;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .main {
     flex: 1 1 auto;
     width: 100%;
     min-height: 100vh;
+    overflow-y: scroll;
   }
 
   ul {

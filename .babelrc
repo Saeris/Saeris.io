@@ -2,7 +2,6 @@
   "env": {
     "webpack": {
       "plugins": [
-        "transform-commonjs-es2015-modules",
         "transform-decorators-legacy",
         "transform-class-properties",
         "transform-object-rest-spread",
@@ -31,7 +30,6 @@
     },
     "e2e": {
       "plugins": [
-        "transform-commonjs-es2015-modules",
         "transform-decorators-legacy",
         "transform-class-properties",
         "transform-object-rest-spread",

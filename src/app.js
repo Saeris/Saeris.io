@@ -1,11 +1,10 @@
-import { inject, LogManager } from 'aurelia-framework'
+import { inject } from 'aurelia-framework'
 import Store from './app/services/store'
 import './sass/global.scss'
 
 @inject(Store)
 export class App {
   constructor(store) {
-    this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
     this.store = store
     this.state = store.state
   }
@@ -18,10 +17,10 @@ export class App {
     config.options.root = `/`
     config.map([
       {
-        route: [`home`],
+        route: [``, `home`],
         name: `home`,
         moduleId: `app/routes/public/home/home`,
-        nav: false,
+        nav: true,
         title: `Home`,
         settings: {
           icon: `home`
@@ -39,7 +38,7 @@ export class App {
         route: [`projects`],
         name: `projects`,
         moduleId: `app/routes/public/projects/projects`,
-        nav: false,
+        nav: true,
         title: `Projects`,
         settings: {
           icon: `code`
@@ -48,7 +47,7 @@ export class App {
         route: [`photography`],
         name: `photography`,
         moduleId: `app/routes/public/photography/photography`,
-        nav: false,
+        nav: true,
         title: `Photography`,
         settings: {
           icon: `camera-retro`
@@ -60,7 +59,7 @@ export class App {
         nav: false,
         title: `Gallery`
       }, {
-        route: [``, `resume`],
+        route: [`resume`],
         name: `resume`,
         moduleId: `app/routes/public/resume/resume`,
         nav: true,

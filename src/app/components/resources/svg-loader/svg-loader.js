@@ -1,14 +1,10 @@
-import { customElement, containerless, LogManager, bindable } from 'aurelia-framework'
+import { customElement, containerless, bindable } from 'aurelia-framework'
 import './svg-loader.scss'
 
 @customElement(`svg-loader`)
 @containerless
 export class SVGLoader {
   @bindable src = ``
-
-  constructor() {
-    this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
-  }
 
   loadSVG(url) {
     /*
