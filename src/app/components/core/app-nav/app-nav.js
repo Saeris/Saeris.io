@@ -12,6 +12,7 @@ export class AppNav {
     this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
     this.gh = github
     this.user = config.profiles.github
+    this.services = config.services
   }
 
   async bind() {
