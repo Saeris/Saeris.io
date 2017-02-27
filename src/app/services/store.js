@@ -41,7 +41,9 @@ export default class Store {
 
   addReducer(name, reducer) {
     this.log.debug(`Adding reducer '${name}'.`, reducer)
-    this.state.asyncReducers = { ...this.state.asyncReducers, [`${name}`]: reducer }
+    let newReducers = {}
+    newReducers[`${name}`] = reducer
+    this.state.asyncReducers = { ...this.state.asyncReducers, ...newReducers }
     this.state.replaceReducer(this.createReducer(this.state.asyncReducers))
   }
 
