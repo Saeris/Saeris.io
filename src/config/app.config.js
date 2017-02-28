@@ -1,30 +1,11 @@
 class Config {
-  apollo = {
+  api = {
     token: ``,
     uri: `https://api.github.com/graphql`
   }
 
-  api = {
-    endpoints: [{
-      name: `flickr`,
-      endpoint: `https://api.flickr.com/services/rest/`,
-      config: null
-    }, {
-      name: `twitch`,
-      endpoint: `https://api.twitch.tv/kraken/`,
-      config: {
-        headers: {
-          'Accept': `application/vnd.twitchtv.v5+json`,
-          'Client-ID': `tkobrq6rshswesmz6jyq06i1c5d647`
-        }
-      }
-    }]
-  }
-
   profiles = {
-    github: `saeris`,
-    flickr: ``,
-    twitch: `ansrath`
+    github: `saeris`
   }
 
   services = [
