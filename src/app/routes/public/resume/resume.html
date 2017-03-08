@@ -1,127 +1,125 @@
 <template>
-  <main id="resume">
-    <section id="title">
-      <h1>${resume.name}</h1>
-      <h2>${resume.headline}</h2>
-      <ul>
-        <li repeat.for="link of resume.contact.links">
-          <a href.bind="link.url" target="_blank"><i class="fa fa-${link.icon}"></i>${link.title}</a>
-        </li>
-      </ul>
-    </section>
+  <section id="title">
+    <h1>${resume.name}</h1>
+    <h2>${resume.headline}</h2>
+    <ul>
+      <li repeat.for="link of resume.contact.links">
+        <a href.bind="link.url" target="_blank"><i class="fa fa-${link.icon}"></i>${link.title}</a>
+      </li>
+    </ul>
+  </section>
 
-    <section id="expertise" class="content_block">
-      <h3>Expertise:</h3>
-      <ul>
-        <li repeat.for="skill of resume.skills">
-          <div class="skill_rating">
-            <span>${skill.name}</span>
-            <rating score.bind="skill.rating"></rating>
-          </div>
-          <div class="skill_details">
-            <span>${skill.level}</span>
-            <span>${skill.years} year(s)</span>
-          </div>
-        </li>
-        <li class="placeholder" repeat.for="skill of resume.skills"></li>
-        <li class="placeholder" repeat.for="skill of resume.skills"></li>
-        <li class="placeholder" repeat.for="skill of resume.skills"></li>
-        <li class="placeholder" repeat.for="skill of resume.skills"></li>
-        <li class="placeholder" repeat.for="skill of resume.skills"></li>
-      </ul>
-    </section>
+  <section id="expertise" class="content_block">
+    <h3>Expertise:</h3>
+    <ul>
+      <li repeat.for="skill of resume.skills">
+        <div class="skill_rating">
+          <span>${skill.name}</span>
+          <rating score.bind="skill.rating"></rating>
+        </div>
+        <div class="skill_details">
+          <span>${skill.level}</span>
+          <span>${skill.years} year(s)</span>
+        </div>
+      </li>
+      <li class="placeholder" repeat.for="skill of resume.skills"></li>
+      <li class="placeholder" repeat.for="skill of resume.skills"></li>
+      <li class="placeholder" repeat.for="skill of resume.skills"></li>
+      <li class="placeholder" repeat.for="skill of resume.skills"></li>
+      <li class="placeholder" repeat.for="skill of resume.skills"></li>
+    </ul>
+  </section>
 
-    <section id="experience" class="content_block">
-      <h3>Experience:</h3>
-      <ul>
-        <li repeat.for="job of resume.jobs">
-          <div class="header">
-            <h4>${job.company}<strong> | </strong></h4>
-            <h5>${job.title}</h5>
-            <span>
-              <h6>${job.location}<strong if.bind="job.location"> | </strong>${job.start} – ${job.end}<em if.bind="(job.start && job.end)"> (~${getDuration(job.start, job.end)})</em></h6>
-            </span>
-          </div>
-          <hr></hr>
-          <ul class="tags" if.bind="job.tags.length > 0">
-            <li repeat.for="tag of job.tags">${tag}</li>
-          </ul>
-          <p if.bind="job.summary">${job.summary}</p>
-          <ul class="highlights" if.bind="job.highlights.length > 0">
-            <li repeat.for="highlight of job.highlights" innerHTML.bind="highlight"></li>
-          </ul>
-          <ul if.bind="job.assignments" class="assignments">
-            <li repeat.for="assignment of job.assignments">
-              <div class="header">
-                <h4>${assignment.name}<strong if.bind="assignment.description"> | </strong></h4>
-                <h5>${assignment.description}</h5>
-                <span>
-                  <h6>${assignment.start} – ${assignment.end}<em if.bind="(assignment.start && assignment.end)"> (~${getDuration(assignment.start, assignment.end)})</em></h6>
-                </span>
-              </div>
-              <hr></hr>
-              <ul class="tags" if.bind="assignment.tags.length > 0">
-                <li repeat.for="tag of assignment.tags">${tag}</li>
-              </ul>
-              <p if.bind="assignment.summary">${assignment.summary}</p>
-              <ul class="highlights" if.bind="assignment.highlights.length > 0">
-                <li repeat.for="highlight of assignment.highlights" innerHTML.bind="highlight"></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+  <section id="experience" class="content_block">
+    <h3>Experience:</h3>
+    <ul>
+      <li repeat.for="job of resume.jobs">
+        <div class="header">
+          <h4>${job.company}<strong> | </strong></h4>
+          <h5>${job.title}</h5>
+          <span>
+            <h6>${job.location}<strong if.bind="job.location"> | </strong>${job.start} – ${job.end}<em if.bind="(job.start && job.end)"> (~${getDuration(job.start, job.end)})</em></h6>
+          </span>
+        </div>
+        <hr></hr>
+        <ul class="tags" if.bind="job.tags.length > 0">
+          <li repeat.for="tag of job.tags">${tag}</li>
+        </ul>
+        <p if.bind="job.summary">${job.summary}</p>
+        <ul class="highlights" if.bind="job.highlights.length > 0">
+          <li repeat.for="highlight of job.highlights" innerHTML.bind="highlight"></li>
+        </ul>
+        <ul if.bind="job.assignments" class="assignments">
+          <li repeat.for="assignment of job.assignments">
+            <div class="header">
+              <h4>${assignment.name}<strong if.bind="assignment.description"> | </strong></h4>
+              <h5>${assignment.description}</h5>
+              <span>
+                <h6>${assignment.start} – ${assignment.end}<em if.bind="(assignment.start && assignment.end)"> (~${getDuration(assignment.start, assignment.end)})</em></h6>
+              </span>
+            </div>
+            <hr></hr>
+            <ul class="tags" if.bind="assignment.tags.length > 0">
+              <li repeat.for="tag of assignment.tags">${tag}</li>
+            </ul>
+            <p if.bind="assignment.summary">${assignment.summary}</p>
+            <ul class="highlights" if.bind="assignment.highlights.length > 0">
+              <li repeat.for="highlight of assignment.highlights" innerHTML.bind="highlight"></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-    <section id="projects" class="content_block">
-      <h3>Projects:</h3>
-      <ul>
-        <li repeat.for="project of resume.projects">
-          <div class="header">
-            <h4>${project.name}<strong if.bind="project.url"> | </strong></h4>
-            <h5><a href.bind="project.url" target="_blank">${project.url}</a></h5>
-            <span>
-              <h6>${project.start} – ${project.end}<em if.bind="(project.start && project.end)"> (~${getDuration(project.start, project.end)})</em></h6>
-            </span>
-          </div>
-          <hr></hr>
-          <ul class="tags" if.bind="project.tags.length > 0">
-            <li repeat.for="tag of project.tags">${tag}</li>
-          </ul>
-          <p if.bind="project.summary">${project.summary}</p>
-          <ul class="highlights" if.bind="project.highlights.length > 0">
-            <li repeat.for="highlight of project.highlights" innerHTML.bind="highlight"></li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+  <section id="projects" class="content_block">
+    <h3>Projects:</h3>
+    <ul>
+      <li repeat.for="project of resume.projects">
+        <div class="header">
+          <h4>${project.name}<strong if.bind="project.url"> | </strong></h4>
+          <h5><a href.bind="project.url" target="_blank">${project.url}</a></h5>
+          <span>
+            <h6>${project.start} – ${project.end}<em if.bind="(project.start && project.end)"> (~${getDuration(project.start, project.end)})</em></h6>
+          </span>
+        </div>
+        <hr></hr>
+        <ul class="tags" if.bind="project.tags.length > 0">
+          <li repeat.for="tag of project.tags">${tag}</li>
+        </ul>
+        <p if.bind="project.summary">${project.summary}</p>
+        <ul class="highlights" if.bind="project.highlights.length > 0">
+          <li repeat.for="highlight of project.highlights" innerHTML.bind="highlight"></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-    <section id="education" class="content_block">
-      <h3>Education:</h3>
-      <ul>
-        <li repeat.for="school of resume.schools">
-          <div class="header">
-            <h4>${school.name}</h4>
-            <span>
-              <h6>${school.location}<strong if.bind="school.location"> | </strong>${school.start} – ${school.end}</h6>
-            </span>
-          </div>
-          <hr></hr>
-          <div class="subheader">
-            <h4>${school.status}</h4>
-            <span>
-              <h6>${school.focus}</h6>
-            </span>
-          </div>
-          <ul class="tags" if.bind="school.tags.length > 0">
-            <li repeat.for="tag of school.tags">${tag}</li>
-          </ul>
-          <p if.bind="project.summary">${school.summary}</p>
-          <ul class="highlights" if.bind="school.highlights.length > 0">
-            <li repeat.for="highlight of school.highlights" innerHTML.bind="highlight"></li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-  </main>
+  <section id="education" class="content_block">
+    <h3>Education:</h3>
+    <ul>
+      <li repeat.for="school of resume.schools">
+        <div class="header">
+          <h4>${school.name}</h4>
+          <span>
+            <h6>${school.location}<strong if.bind="school.location"> | </strong>${school.start} – ${school.end}</h6>
+          </span>
+        </div>
+        <hr></hr>
+        <div class="subheader">
+          <h4>${school.status}</h4>
+          <span>
+            <h6>${school.focus}</h6>
+          </span>
+        </div>
+        <ul class="tags" if.bind="school.tags.length > 0">
+          <li repeat.for="tag of school.tags">${tag}</li>
+        </ul>
+        <p if.bind="project.summary">${school.summary}</p>
+        <ul class="highlights" if.bind="school.highlights.length > 0">
+          <li repeat.for="highlight of school.highlights" innerHTML.bind="highlight"></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 </tempalte>

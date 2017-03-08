@@ -1,4 +1,8 @@
 <template>
+  <profile></profile>
   <app-nav router.bind="router"></app-nav>
-  <router-view containerless></router-view>
+  <main id="${id}">
+    <app-header router.bind="router"></app-header>
+    <router-view containerless></router-view>
+  </main>
 </template>

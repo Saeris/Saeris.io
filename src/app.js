@@ -1,13 +1,28 @@
 import { inject, LogManager } from 'aurelia-framework'
+import { EventAggregator } from 'aurelia-event-aggregator'
 import Store from './app/services/store'
 import './sass/global.scss'
 
-@inject(Store)
+@inject(EventAggregator, Store)
 export class App {
-  constructor(store) {
+  constructor(ea, store) {
     this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
+    this.ea = ea
     this.store = store
     this.state = store.state
+  }
+
+  attached() {
+    this.id = this.router.currentInstruction.config.name
+    this.subscription = this.ea.subscribe(`router:navigation:success`, this.navigationSuccess.bind(this))
+  }
+
+  detached() {
+    this.subscription.dispose()
+  }
+
+  navigationSuccess({ instruction }) {
+    this.id = instruction.config.name
   }
 
   configureRouter(config, router) {

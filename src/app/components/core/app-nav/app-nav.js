@@ -1,41 +1,36 @@
 import { customElement, containerless, inject, bindable, LogManager } from 'aurelia-framework'
-import GitHub from 'github-api'
+import Store from '../../../services/store'
 import config from '../../../../config/app.config'
 import './app-nav.scss'
 
 @customElement(`app-nav`)
 @containerless
-@inject(GitHub)
+@inject(Store)
 export class AppNav {
   @bindable router
-  constructor(github) {
+  id = `navigation`
+
+  constructor(store) {
     this.log = LogManager.getLogger(`Saeris.io/${this.constructor.name}`)
-    this.gh = github
-    this.user = config.profiles.github
+    this.store = store
+    this.state = store.state
+    this.subscription = this.state.subscribe(::this.update)
     this.services = config.services
   }
 
-  async bind() {
-    try {
-      this.log.debug(`Fetching remote resources...`)
-      const profile = await this.gh.getUser(this.user).getProfile()
-      this.profile = {
-        name: profile.data.name,
-        location: profile.data.location,
-        picture: profile.data.avatar_url,
-        bio: profile.data.bio
-      }
-      this.log.debug(`Successfully retrieved remote resources.`)
-    } catch (error) {
-      this.log.error(`Failed to fetch remote resources.`, error)
-    }
-  }
-
   attached() {
+    this.update()
   }
 
-  toggleAbout($event) {
-    $(this.about).toggleClass(`active`)
-    $(this.nav).toggle()
+  update() {
+    this.profile = this.state.getState().profile
+  }
+
+  detached() {
+    this.subscription.unsubscribe()
+  }
+
+  openProfile() {
+    this.state.dispatch({ type: `MODAL_TOGGLE`, payload: `profile` })
   }
 }

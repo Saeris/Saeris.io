@@ -1,0 +1,95 @@
+@import "../../../../sass/utils/include-media";
+
+@mixin styles($avatar-size) {
+  #profile {
+    background-image: url("../../../../img/bg.jpg");
+    background-position: center -5em;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: opacity 5s ease-in-out;
+
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      background: #fff;
+      max-width: 375px;
+      margin: 15px auto;
+      border-radius: 3px;
+      padding: calc(3rem + (#{$avatar-size} / 2)) 0 3rem 0;
+      box-shadow: 0 0 5px rgba(0,0,0,.5);
+
+      button {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        top: 1rem;
+        right: 1rem;
+        width: 3rem;
+        height: 3rem;
+        color: #9eabb3;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+
+        &:hover {
+          color: #0c0c0c;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      img {
+        position: absolute;
+        top: calc((#{$avatar-size} / 2) * -1);
+        width: $avatar-size;
+        height: $avatar-size;
+        border-radius: $avatar-size;
+        border: calc(#{$avatar-size} / 22.5) solid #fff;
+        box-shadow: inset 0 1.5px 3px 0 rgba(0,0,0,.15), 0 1.5px 3px 0 rgba(0,0,0,.15);
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        line-height: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        font-weight: normal;
+        margin-bottom: 1rem;
+
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+
+      p {
+        text-align: center;
+        padding: 0 3rem;
+      }
+    }
+  }
+}
+
+@include media("<=desktop") {
+  $values: (
+    avatar-size: 18rem
+  );
+
+  @include styles($values...);
+}
+
+@include media(">desktop") {
+  $values: (
+    avatar-size: 18rem
+  );
+
+  @include styles($values...);
+}
