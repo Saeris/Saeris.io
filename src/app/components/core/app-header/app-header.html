@@ -1,3 +1,11 @@
 <template>
-  
+  <header id="appHeader">
+    <button class="menu" click.delegate="toggleNavigation()" title="Navigation">
+      <i class="fa fa-bars"></i>
+    </button>
+    <h1>${title}</h1>
+    <button class="about" click.delegate="openProfile()" title="About Me">
+      <img show.bind="profile.picture" src.bind="profile.picture" alt="Author's Picture">
+    </button>
+  </header>
 </template>

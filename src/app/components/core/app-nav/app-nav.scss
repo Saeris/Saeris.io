@@ -3,113 +3,57 @@
 @mixin styles(
   $nav-width,
   $avatar-size,
-  $hidden
+  $hidden,
+  $landscape,
+  $phone
 ) {
-  #about {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    z-index: 30;
-    opacity: 0;
-    background-image: url("../../../../img/bg.jpg");
-    background-position: center -5em;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    transition: opacity 5s ease-in-out;
-
-
-    &.active {
-      display: flex;
-      opacity: 1;
-      transition: opacity 5s ease-in-out;
-    }
-
-    section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      background: #fff;
-      max-width: 400px;
-      margin: 15px auto;
-      border-radius: 3px;
-      padding: 3rem 0;
-      box-shadow: 0 0 5px rgba(0,0,0,.5);
-
-      button {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        color: #9eabb3;
-        cursor: pointer;
-        background: none;
-        border: none;
-        padding: 0;
-
-        &:hover {
-          color: #0c0c0c;
-        }
-
-        &:focus {
-          outline: none;
-        }
-      }
-
-      img {
-        width: 20rem;
-        height: 20rem;
-        border-radius: 10rem;
-        margin-bottom: 1.5rem;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-        line-height: 1.8rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-        font-weight: normal;
-
-        i {
-          margin-right: 0.5rem;
-        }
-      }
-
-      p {
-        text-align: center;
-        padding: 0 3rem;
-      }
-    }
-  }
-
   #main-nav {
-    flex: 0 0 auto;
-    width: $nav-width;
+    flex: 1 0 auto;
     font-family: "Open Sans", sans-serif;
+
+    .drawer {
+      transition: width .25s ease-in-out;
+      @if ($phone) {
+        width: $nav-width;
+      } @else {
+        width: 0;
+      }
+
+      &.open {
+        @if ($phone) {
+          width: 0;
+        } @else {
+          width: $nav-width;
+        }
+        .nav-wrapper {
+          @if ($phone) {
+            left: calc(#{$nav-width} * -1);
+          } @else {
+            left: 0;
+          }
+        }
+      }
+    }
 
     .nav-wrapper {
       display: flex;
       flex-direction: column;
       position: fixed;
       top: 0;
-      left: 0;
+      @if ($phone) {
+        left: 0;
+      } @else {
+        left: calc(#{$nav-width} * -1);
+      }
       width: $nav-width;
       height: 100%;
       height: 100vh;
       background: linear-gradient(to left,  rgba(17,26,35,0.25) 0%,rgba(69,72,77,0.25) 100%);
-      border-width: 0 0.3rem 0 0;
-      border-style: solid;
-      border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 25%,rgba(255,255,255,1) 75%,rgba(255,255,255,0) 100%);
       backdrop-filter: blur(5px);
+      transition: left .25s ease-in-out;
     }
 
-    #profile {
+    #about {
       color: #ebebeb;
       text-align: center;
       padding-top: 4rem;
@@ -237,21 +181,61 @@
   }
 }
 
-@include media("<=desktop") {
+@include media('<=phone') {
   $values: (
-    nav-width: 7.5rem,
-    avatar-size: 3rem,
-    hidden: true
+    nav-width: 25rem,
+    avatar-size: 10rem,
+    hidden: false,
+    landscape: false,
+    phone: true
   );
 
   @include styles($values...);
 }
 
-@include media(">desktop") {
+@include media('>=phone', '<=tablet') {
   $values: (
     nav-width: 25rem,
     avatar-size: 10rem,
-    hidden: false
+    hidden: false,
+    landscape: false,
+    phone: true
+  );
+
+  @include styles($values...);
+}
+
+@include media('>=tablet', '<=desktop', 'landscape', 'retina2x') {
+  $values: (
+    nav-width: 25rem,
+    avatar-size: 10rem,
+    hidden: false,
+    landscape: true,
+    phone: true
+  );
+
+  @include styles($values...);
+}
+
+@include media('>=tablet', '<desktop', 'retina2x') {
+  $values: (
+    nav-width: 7.5rem,
+    avatar-size: 3rem,
+    hidden: true,
+    landscape: false,
+    phone: false
+  );
+
+  @include styles($values...);
+}
+
+@include media('>=desktop') {
+  $values: (
+    nav-width: 25rem,
+    avatar-size: 10rem,
+    hidden: false,
+    landscape: false,
+    phone: false
   );
 
   @include styles($values...);

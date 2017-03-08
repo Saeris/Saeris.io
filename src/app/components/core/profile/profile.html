@@ -1,0 +1,12 @@
+<template>
+  <modal id.bind="id">
+    <section>
+      <button click.delegate="toggleVisibility()"><i class="fa fa-remove"></i></button>
+      <img show.bind="profile.picture" src.bind="profile.picture" alt="Author's Picture">
+      <h1 if.bind="profile.name">${profile.name}</h1>
+      <h2 if.bind="profile.title"><i class="fa fa-briefcase"></i>${profile.job}</h2>
+      <h2 if.bind="profile.location"><i class="fa fa-map-marker"></i>${profile.location}</h2>
+      <p if.bind="profile.bio">${profile.bio}</p>
+    </section>
+  </modal>
+</template>

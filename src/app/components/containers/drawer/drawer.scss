@@ -1,0 +1,17 @@
+@import "../../../../sass/utils/include-media";
+
+@mixin styles() {
+  .drawer {
+  }
+
+  &.open {
+  }
+}
+
+@include media("<=desktop") {
+  @include styles();
+}
+
+@include media(">desktop") {
+  @include styles();
+}

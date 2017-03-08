@@ -14,14 +14,19 @@ body {
   background-position: center -5em;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow: hidden;
+  overflow-x: hidden;
 
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1 1 auto;
+    position: relative;
     width: 100%;
     min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   ul {

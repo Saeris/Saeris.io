@@ -1,6 +1,5 @@
 <template>
-  <div id="modal" if.bind="config.visible">
-    <button click.delegate="close()"></button>
+  <aside id="${id}" class="modal ${visible ? 'open' : ''}">
     <slot></slot>
-  </div>
+  </aside>
 </template>

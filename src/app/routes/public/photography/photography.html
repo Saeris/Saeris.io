@@ -1,19 +1,17 @@
 <template>
-  <main id="photography">
-    <section id="galleries">
-      <ul>
-        <li repeat.for="album of albums" class="album">
-          <a href="/photography/${album.slug}">
-            <div class="preview">
-              <img src.bind="album.primary.large" alt="">
-              <h2>${album.title}</h2>
-            </div>
-          </a>
-          <div if.bind="album.description" class="description">
-            <p>${album.description}</p>
+  <section id="galleries">
+    <ul>
+      <li repeat.for="album of albums" class="album">
+        <a href="/photography/${album.slug}">
+          <div class="preview">
+            <img src.bind="album.primary.large" alt="">
+            <h2>${album.title}</h2>
           </div>
-        </li>
-      </ul>
-    </section>
-  </main>
+        </a>
+        <div if.bind="album.description" class="description">
+          <p>${album.description}</p>
+        </div>
+      </li>
+    </ul>
+  </section>
 </tempalte>
