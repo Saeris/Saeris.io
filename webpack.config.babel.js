@@ -104,7 +104,7 @@ let config = generateConfig(
 
   babel(),
   html(),
-  sass({ allChunks: true, sourceMap: false, additionalLoaders: [`postcss-loader`] }),
+  sass({ filename: `app.css`, allChunks: true, sourceMap: false, additionalLoaders: [`postcss-loader`] }),
   css({ filename: `styles.css`, allChunks: true, sourceMap: false, additionalLoaders: [`postcss-loader`] }),
   fontAndImages(),
   globalBluebird(),
