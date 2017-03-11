@@ -1,360 +1,310 @@
-#resume {
-  
-  #title {
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 6rem 0 2rem 0;
+@import "../../../../sass/utils/include-media";
 
-    h1 {
-      flex: 0 0 auto;
-      font-family: "Orbitron";
-      text-transform: uppercase;
-      font-size: 4.8rem;
-      font-weight: bold;
-      line-height: 5rem;
-      text-shadow: 0px 0px 1rem rgba(171, 246, 255, 0.9);
-      margin: 0px;
-    }
-
-    h2 {
-      flex: 0 0 auto;
-      font-family: "klavika_light";
-      font-size: 3.88rem;
-      font-weight: normal;
-      line-height: 3rem;
-      color: rgba(236, 254, 255, 0.9);
-      text-shadow: 0px 0px 0.5rem rgba(171, 246, 255, 0.9);
-      margin: 0px;
-      margin-bottom: 3rem;
-    }
-
-    ul {
-      display: flex;
-      justify-content: center;
-      background-color: rgba(255, 255, 255, 0.15);
-
-      li {
-        flex: 0 0 auto;
-        min-width: 10rem;
-        padding: 0 1rem;
-
-        a {
-          font-family: 'klavika_reg_caps';
-          font-size: 2.4rem;
-          color: rgba(236, 254, 255, 0.9);
-          font-style: normal;
-          text-decoration: none;
-
-          i {
-            font-size: 2.6rem;
-            margin-right: 1rem;
-          }
-
-          &:hover {
-            color: rgba(255, 255, 255, 1);
-            text-shadow: 0px 0px 5px rgba(171, 246, 255, 0.9);
-          }
-        }
-      }
-    }
-  }
-
-  .content_block {
-    $cut: 2.5rem;
-    $margin_width: 3rem;
-
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 auto;
-    position: relative;
-    width: calc(100% - (#{$margin_width} * 2));
-    max-width: 128rem;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 0.2rem solid rgba(255, 255, 255, 0.65);
-    border-radius: 0.3rem;
-    margin: 1.5rem $margin_width;
-    padding: 1rem 2rem;
-    clip-path: polygon($cut 0%, 100% 0%, 100% calc(100% - #{$cut}), calc(100% - #{$cut}) 100%, 0% 100%, 0% $cut);
-
-    &:before {
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      border-width:$cut $cut 0 0;
-      border-style:solid;
-      border-color:rgba(255, 255, 255, 0.65) transparent transparent rgba(255, 255, 255, 0.65);
-    }
-
-    &:after {
-      content:"";
-      position:absolute;
-      bottom:0;
-      right:0;
-      border-width:0 0 $cut $cut;
-      border-style:solid;
-      border-color:transparent #fff #fff transparent;
-    }
-
-    h3 {
-      font-family: "Orbitron";
-      font-size: 2.2rem;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    ul {
+@mixin styles(
+  $title-padding,
+  $name-size,
+  $name-height,
+  $title-size,
+  $title-height
+) {
+  #resume {
+    #title {
       display: flex;
       flex: 0 0 auto;
       flex-direction: column;
+      justify-content: center;
+      align-content: center;
       width: 100%;
-      margin-bottom: 1rem;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: $title-padding;
 
-      li {
+      h1 {
         flex: 0 0 auto;
-        width: 100%;
+        font-family: "Orbitron";
+        text-transform: uppercase;
+        font-size: $name-size;
+        font-weight: bold;
+        line-height: $name-height;
+        text-shadow: 0px 0px 1rem rgba(171, 246, 255, 0.9);
+        margin: 0px;
+      }
 
-        .header {
-          display: flex;
-          align-items: baseline;
+      h2 {
+        flex: 0 0 auto;
+        font-family: "klavika_light";
+        font-size: $title-size;
+        font-weight: normal;
+        line-height: $title-height;
+        color: rgba(236, 254, 255, 0.9);
+        text-shadow: 0px 0px 0.5rem rgba(171, 246, 255, 0.9);
+        margin: 0px;
+        margin-bottom: 3rem;
+      }
 
-          h4 {
-            flex: 0 0 auto;
-            font-family: "klavika_regular";
-            font-size: 1.8rem;
-            font-style: italic;
-            text-shadow: -0.5px -0.5px 1px #3fa9f5;
-            margin: 0;
+      ul {
+        display: flex;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.15);
 
-            strong {
-              color: #3fa9f5;
-              font-style: normal;
-              text-shadow: none;
-              margin: 0 0.5rem;
-            }
-          }
+        li {
+          flex: 0 0 auto;
+          min-width: 10rem;
+          padding: 0 1rem;
 
-          h5 {
-            flex: 0 0 auto;
-            color: #3fa9f5;
-            font-family: "klavika_regular";
-            font-size: 1.4rem;
+          a {
+            font-family: 'klavika_reg_caps';
+            font-size: 2.4rem;
+            color: rgba(236, 254, 255, 0.9);
             font-style: normal;
-            margin: 0;
+            text-decoration: none;
 
-            a {
-              color: #3fa9f5;
-              text-decoration: none;
-              text-shadow: none;
+            i {
+              font-size: 2.6rem;
+              margin-right: 1rem;
             }
-          }
 
-          span {
-            flex: 1 0 auto;
-            text-align: right;
-
-            h6 {
-              color: #3fa9f5;
-              font-family: "klavika_regular";
-              font-size: 1.2rem;
-              font-style: italic;
-              margin: 0;
-
-              strong {
-                font-style: normal;
-                margin: 0 0.25rem;
-              }
-            }
-          }
-        }
-
-        hr {
-          background-color: #3fa9f5;
-          height: 0.2rem;
-          border: none;
-          margin: 0;
-          margin-bottom: 1rem;
-        }
-
-        .subheader {
-          display: flex;
-          align-items: baseline;
-          margin-top: -0.5rem;
-          margin-bottom: 0.5rem;
-
-          h4 {
-            flex: 0 0 auto;
-            font-family: "klavika_regular";
-            font-size: 1.2rem;
-            margin: 0;
-          }
-
-          span {
-            flex: 1 0 auto;
-            text-align: right;
-
-            h6 {
-              font-family: "klavika_regular";
-              font-size: 1.2rem;
-              margin: 0;
-            }
-          }
-        }
-
-        .tags {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          opacity: 0.5;
-          margin-bottom: 0;
-          transition: opacity 0.5s ease-in-out;
-
-          &:hover {
-            opacity: 1;
-          }
-
-          li{
-            flex: 0 0 auto;
-            width: auto;
-            color: #FFF;
-            font-size: 1.2rem;
-            background-color: #3FA9F5;
-            border-radius: 0.25rem;
-            padding: 0 0.5rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-
-            &:last-child{
-              margin-right: 0;
-            }
-          }
-        }
-
-        p {
-          text-indent: 2.5rem;
-        }
-
-        .highlights {
-          padding-left: 0;
-          margin-bottom: 1rem;
-
-          li {
-            padding-left: 2rem;
-
-            &:before {
-              font-family: "klavika_regular";
-              content: "\BB";
-              font-size: 1.8rem;
-              display: inline;
-              color: #7ac943;
-              margin-left: -2rem;
-              padding-right: 1rem;
+            &:hover {
+              color: rgba(255, 255, 255, 1);
+              text-shadow: 0px 0px 5px rgba(171, 246, 255, 0.9);
             }
           }
         }
       }
     }
-  }
 
-  #expertise {
-    ul {
-      flex-direction: row;
-      justify-content: space-around;
+    .content_block {
+      $cut: 2.5rem;
+      $margin_width: 3rem;
 
-      li {
-        $margin: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 auto;
+      position: relative;
+      width: calc(100% - (#{$margin_width} * 2));
+      max-width: 128rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 0.2rem solid rgba(255, 255, 255, 0.65);
+      border-radius: 0.3rem;
+      margin: 1.5rem $margin_width;
+      padding: 1rem 2rem;
+      clip-path: polygon($cut 0%, 100% 0%, 100% calc(100% - #{$cut}), calc(100% - #{$cut}) 100%, 0% 100%, 0% $cut);
+
+      &:before {
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        border-width:$cut $cut 0 0;
+        border-style:solid;
+        border-color:rgba(255, 255, 255, 0.65) transparent transparent rgba(255, 255, 255, 0.65);
+      }
+
+      &:after {
+        content:"";
+        position:absolute;
+        bottom:0;
+        right:0;
+        border-width:0 0 $cut $cut;
+        border-style:solid;
+        border-color:transparent #fff #fff transparent;
+      }
+
+      h3 {
+        font-family: "Orbitron";
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      ul {
         display: flex;
-        flex: 1 0 auto;
+        flex: 0 0 auto;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        width: calc((100% / 6) - #{$margin * 2});
-        min-width: calc(20rem - #{$margin * 2});
-        height: 5rem;
-        max-height: 5rem;
-        font-family: 'klavika_reg_caps';
-        padding: 0.5rem;
-        margin: $margin;
+        width: 100%;
+        margin-bottom: 1rem;
 
-        $color: rgba(0, 0, 0, 0.25);
-        $fill: #3FA9F5;
-        $corner: 1rem;
-        $width: 0.2rem;
-        $padding: 0rem;
-
-        &:before {
-          background: $color;
-          content: '';
-          position: absolute;
-          bottom: $padding;
-          right: $padding;
-          height: $width;
-          width: $corner;
-        }
-
-        &:after {
-          background: $color;
-          content: '';
-          position: absolute;
-          bottom: $padding;
-          right: $padding;
-          height: $corner;
-          width: $width;
-        }
-
-        div {
-          display: flex;
+        li {
           flex: 0 0 auto;
-          justify-content: space-between;
-          align-items: center;
           width: 100%;
-          height: 2.5rem;
 
-          span {
-            display: inline-block;
-            flex: 1 0 auto;
+          .header {
+            display: flex;
+            align-items: baseline;
 
-            &:last-child {
+            h4 {
+              flex: 0 0 auto;
+              font-family: "klavika_regular";
+              font-size: 1.8rem;
+              font-style: italic;
+              text-shadow: -0.5px -0.5px 1px #3fa9f5;
+              margin: 0;
+
+              strong {
+                color: #3fa9f5;
+                font-style: normal;
+                text-shadow: none;
+                margin: 0 0.5rem;
+              }
+            }
+
+            h5 {
+              flex: 0 0 auto;
+              color: #3fa9f5;
+              font-family: "klavika_regular";
+              font-size: 1.4rem;
+              font-style: normal;
+              margin: 0;
+
+              a {
+                color: #3fa9f5;
+                text-decoration: none;
+                text-shadow: none;
+              }
+            }
+
+            span {
+              flex: 1 0 auto;
               text-align: right;
+
+              h6 {
+                color: #3fa9f5;
+                font-family: "klavika_regular";
+                font-size: 1.2rem;
+                font-style: italic;
+                margin: 0;
+
+                strong {
+                  font-style: normal;
+                  margin: 0 0.25rem;
+                }
+              }
+            }
+          }
+
+          hr {
+            background-color: #3fa9f5;
+            height: 0.2rem;
+            border: none;
+            margin: 0;
+            margin-bottom: 1rem;
+          }
+
+          .subheader {
+            display: flex;
+            align-items: baseline;
+            margin-top: -0.5rem;
+            margin-bottom: 0.5rem;
+
+            h4 {
+              flex: 0 0 auto;
+              font-family: "klavika_regular";
+              font-size: 1.2rem;
+              margin: 0;
+            }
+
+            span {
+              flex: 1 0 auto;
+              text-align: right;
+
+              h6 {
+                font-family: "klavika_regular";
+                font-size: 1.2rem;
+                margin: 0;
+              }
+            }
+          }
+
+          .tags {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            opacity: 0.5;
+            margin-bottom: 0;
+            transition: opacity 0.5s ease-in-out;
+
+            &:hover {
+              opacity: 1;
+            }
+
+            li{
+              flex: 0 0 auto;
+              width: auto;
+              color: #FFF;
+              font-size: 1.2rem;
+              background-color: #3FA9F5;
+              border-radius: 0.25rem;
+              padding: 0 0.5rem;
+              margin-right: 0.5rem;
+              margin-bottom: 0.5rem;
+
+              &:last-child{
+                margin-right: 0;
+              }
+            }
+          }
+
+          p {
+            text-indent: 2.5rem;
+          }
+
+          .highlights {
+            padding-left: 0;
+            margin-bottom: 1rem;
+
+            li {
+              padding-left: 2rem;
+
+              &:before {
+                font-family: "klavika_regular";
+                content: "\BB";
+                font-size: 1.8rem;
+                display: inline;
+                color: #7ac943;
+                margin-left: -2rem;
+                padding-right: 1rem;
+              }
             }
           }
         }
+      }
+    }
 
-        .skill_rating {
-          font-size: 1.6rem;
+    #expertise {
+      ul {
+        flex: 1 1 auto;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
 
-          div {
-            display: inline-block;
-            width: auto;
+        li {
+          $margin: 0.5rem;
+          display: flex;
+          flex: 1 0 auto;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          width: calc((100% / 6) - #{$margin * 2});
+          min-width: calc(20rem - #{$margin * 2});
+          height: 5rem;
+          max-height: 5rem;
+          font-family: 'klavika_reg_caps';
+          padding: 0.5rem;
+          margin: $margin;
 
-            .rating {
-              .Outline {
-                fill: currentColor;
-                color: $color;
-              }
-              .Fill {
-                fill: currentColor;
-                color: $fill;
-              }
-              .hidden {
-                opacity: 0;
-              }
-            }
-          }
+          $color: rgba(0, 0, 0, 0.25);
+          $fill: #3FA9F5;
+          $corner: 1rem;
+          $width: 0.2rem;
+          $padding: 0rem;
 
           &:before {
             background: $color;
             content: '';
             position: absolute;
-            top: $padding;
-            left: $padding;
+            bottom: $padding;
+            right: $padding;
             height: $width;
             width: $corner;
           }
@@ -363,54 +313,175 @@
             background: $color;
             content: '';
             position: absolute;
-            top: $padding;
-            left: $padding;
+            bottom: $padding;
+            right: $padding;
             height: $corner;
             width: $width;
           }
-        }
 
-        .skill_details {
-          display: flex;
-          height: 0;
-          opacity: 0;
-          font-size: 1.4rem;
-          transition: height 0.5s, opacity 0.5s ease-in-out;
-        }
-
-        &:hover {
-          .skill_details {
+          div {
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
             height: 2.5rem;
-            opacity: 1;
+
+            span {
+              display: inline-block;
+              flex: 1 0 auto;
+
+              &:last-child {
+                text-align: right;
+              }
+            }
+          }
+
+          .skill_rating {
+            font-size: 1.6rem;
+
+            div {
+              display: inline-block;
+              width: auto;
+
+              .rating {
+                .Outline {
+                  fill: currentColor;
+                  color: $color;
+                }
+                .Fill {
+                  fill: currentColor;
+                  color: $fill;
+                }
+                .hidden {
+                  opacity: 0;
+                }
+              }
+            }
+
+            &:before {
+              background: $color;
+              content: '';
+              position: absolute;
+              top: $padding;
+              left: $padding;
+              height: $width;
+              width: $corner;
+            }
+
+            &:after {
+              background: $color;
+              content: '';
+              position: absolute;
+              top: $padding;
+              left: $padding;
+              height: $corner;
+              width: $width;
+            }
+          }
+
+          .skill_details {
+            display: flex;
+            height: 0;
+            opacity: 0;
+            font-size: 1.4rem;
+            transition: height 0.5s, opacity 0.5s ease-in-out;
+          }
+
+          &:hover {
+            .skill_details {
+              height: 2.5rem;
+              opacity: 1;
+            }
+          }
+
+          &.placeholder {
+            visibility: hidden;
+            height: 0;
+            border: 0;
+            padding: 0;
+            margin: 0 $margin;
           }
         }
+      }
+    }
 
-        &.placeholder {
-          visibility: hidden;
-          height: 0;
-          border: 0;
-          padding: 0;
-          margin: 0 $margin;
+    #experience {
+      ul {
+        li {
+          .assignments {
+            padding-left: 1rem;
+          }
         }
       }
     }
-  }
 
-  #experience {
-    ul {
-      li {
-        .assignments {
-          padding-left: 1rem;
-        }
-      }
+    #projects {
+
+    }
+
+    #education {
+
     }
   }
+}
 
-  #projects {
+@include media('<=phone') {
+  $values: (
+    title-padding: 0 0 2rem 0,
+    name-size: 3.2rem,
+    name-height: 3rem,
+    title-size: 2.23rem,
+    title-height: 2.5rem
+  );
 
-  }
+  @include styles($values...);
+}
 
-  #education {
+@include media('>=phone', '<=tablet') {
+  $values: (
+    title-padding: 0 0 2rem 0,
+    name-size: 3.2rem,
+    name-height: 3rem,
+    title-size: 2.23rem,
+    title-height: 2.5rem
+  );
 
-  }
+  @include styles($values...);
+}
+
+@include media('>=tablet', '<=desktop', 'landscape', 'retina2x') {
+  $values: (
+    title-padding: 6rem 0 2rem 0,
+    name-size: 4.8rem,
+    name-height: 5rem,
+    title-size: 3.33rem,
+    title-height: 3rem
+  );
+
+  @include styles($values...);
+}
+
+@include media('>=tablet', '<desktop', 'retina2x') {
+  $values: (
+    title-padding: 6rem 0 2rem 0,
+    name-size: 4.8rem,
+    name-height: 5rem,
+    title-size: 3.33rem,
+    title-height: 3rem
+  );
+
+  @include styles($values...);
+}
+
+@include media('>=desktop') {
+  $values: (
+    title-padding: 6rem 0 2rem 0,
+    name-size: 4.8rem,
+    name-height: 5rem,
+    title-size: 3.33rem,
+    title-height: 3rem
+  );
+
+  @include styles($values...);
 }
