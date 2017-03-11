@@ -6,7 +6,7 @@ export class Resume {
   resume = {
   	name: `Drake Costa`,
 
-  	headline: `Front-End Web Developer`,
+  	headline: `Front-End JavaScript Engineer`,
 
   	contact: {
   		email: `drake@saeris.io`,
