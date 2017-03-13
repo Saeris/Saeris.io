@@ -22,6 +22,7 @@ import commonChunksOptimize from '@easy-webpack/config-common-chunks-simple'
 import copyFiles from '@easy-webpack/config-copy-files'
 //import uglify from '@easy-webpack/config-uglify'
 import generateCoverage from '@easy-webpack/config-test-coverage-istanbul'
+import offline from '@easy-webpack/config-offline'
 
 dotenv.config()
 
@@ -71,6 +72,21 @@ const coreBundles = {
     `aurelia-templating-router`,
     `aurelia-templating-resources`
   ]
+}
+
+const offlineConfig = {
+  caches: {
+    main: [`:rest:`],
+    additional: [`:externals:`],
+    optional: [`*.chunk.js`]
+  },
+  ServiceWorker: {
+    events: true
+  },
+  AppCache: {
+    caches: [`main`, `additional`, `optional`]
+  },
+  safeToUseOptionalCaches: true
 }
 
 /**
@@ -175,7 +191,9 @@ let config = generateConfig(
     plugins: [
       new webpack.EnvironmentPlugin([`API_KEY`, `FLICKR_API_KEY`, `FLICKR_USER`])
     ]
-  }
+  },
+
+  offline({ options: offlineConfig })
 )
 
 module.exports = stripMetadata(config)
