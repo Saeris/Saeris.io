@@ -33,7 +33,6 @@
     "build:prod": "cross-env NODE_ENV=production npm run webpack -- --progress --profile",
     "start": "npm run server:dev",
     "server": "npm run server:dev",
-    "server:dev": "cross-env NODE_ENV=development npm run webpack-dev-server -- --inline --progress --profile --watch",
     "server:dev:hmr": "npm run server:dev -- --hot",
     "server:prod": "http-server dist --cors",
     "webpack": "cross-env BABEL_ENV=node ./node_modules/.bin/webpack",
@@ -106,6 +105,7 @@
     "@easy-webpack/config-global-regenerator": "^1.2.2",
     "@easy-webpack/config-html": "^3.1.0",
     "@easy-webpack/config-json": "^3.1.0",
+    "@easy-webpack/config-offline": "^3.0.0",
     "@easy-webpack/config-sass": "^4.0.0",
     "@easy-webpack/config-test-coverage-istanbul": "^3.2.0",
     "@easy-webpack/config-uglify": "^2.2.3",
@@ -160,7 +160,8 @@
           "last 2 versions"
         ]
       },
-      "postcss-flexbugs-fixes": {}
+      "postcss-flexbugs-fixes": {},
+      "autoprefixer": {}
     }
   }
 }

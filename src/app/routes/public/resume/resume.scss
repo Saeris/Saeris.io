@@ -5,7 +5,10 @@
   $name-size,
   $name-height,
   $title-size,
-  $title-height
+  $title-height,
+  $content-max-width,
+  $skill-margin,
+  $skill-width
 ) {
   #resume {
     #title {
@@ -82,7 +85,7 @@
       flex: 1 0 auto;
       position: relative;
       width: calc(100% - (#{$margin_width} * 2));
-      max-width: 128rem;
+      max-width: $content-max-width;
       background-color: rgba(255, 255, 255, 0.9);
       border: 0.2rem solid rgba(255, 255, 255, 0.65);
       border-radius: 0.3rem;
@@ -278,20 +281,19 @@
         justify-content: space-around;
 
         li {
-          $margin: 0.5rem;
           display: flex;
-          flex: 1 0 auto;
+          flex: 1 0 calc(20rem - #{$skill-margin * 2});
           flex-direction: column;
           justify-content: center;
           align-items: center;
           position: relative;
-          width: calc((100% / 6) - #{$margin * 2});
-          min-width: calc(20rem - #{$margin * 2});
+          width: calc((100% / $skill-width) - #{$skill-margin * 2});
+          min-width: calc(20rem - #{$skill-margin * 2});
           height: 5rem;
           max-height: 5rem;
           font-family: 'klavika_reg_caps';
           padding: 0.5rem;
-          margin: $margin;
+          margin: $skill-margin;
 
           $color: rgba(0, 0, 0, 0.25);
           $fill: #3FA9F5;
@@ -400,7 +402,7 @@
             height: 0;
             border: 0;
             padding: 0;
-            margin: 0 $margin;
+            margin: 0 $skill-margin;
           }
         }
       }
@@ -432,7 +434,10 @@
     name-size: 3.2rem,
     name-height: 3rem,
     title-size: 2.23rem,
-    title-height: 2.5rem
+    title-height: 2.5rem,
+    content-max-width: 128rem,
+    skill-margin: 0.5rem,
+    skill-width: 1
   );
 
   @include styles($values...);
@@ -444,7 +449,10 @@
     name-size: 3.2rem,
     name-height: 3rem,
     title-size: 2.23rem,
-    title-height: 2.5rem
+    title-height: 2.5rem,
+    content-max-width: 128rem,
+    skill-margin: 0.5rem,
+    skill-width: 2
   );
 
   @include styles($values...);
@@ -456,7 +464,10 @@
     name-size: 4.8rem,
     name-height: 5rem,
     title-size: 3.33rem,
-    title-height: 3rem
+    title-height: 3rem,
+    content-max-width: 128rem,
+    skill-margin: 0.5rem,
+    skill-width: 4
   );
 
   @include styles($values...);
@@ -468,7 +479,10 @@
     name-size: 4.8rem,
     name-height: 5rem,
     title-size: 3.33rem,
-    title-height: 3rem
+    title-height: 3rem,
+    content-max-width: 128rem,
+    skill-margin: 0.5rem,
+    skill-width: 4
   );
 
   @include styles($values...);
@@ -480,7 +494,10 @@
     name-size: 4.8rem,
     name-height: 5rem,
     title-size: 3.33rem,
-    title-height: 3rem
+    title-height: 3rem,
+    content-max-width: 128rem,
+    skill-margin: 0.5rem,
+    skill-width: 6
   );
 
   @include styles($values...);
