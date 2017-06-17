@@ -49,7 +49,6 @@
       height: 100%;
       height: 100vh;
       background: linear-gradient(to left,  rgba(17,26,35,0.25) 0%,rgba(69,72,77,0.25) 100%);
-      backdrop-filter: blur(5px);
       transition: left .25s ease-in-out;
     }
 
@@ -175,6 +174,11 @@
     }
 
     #socialnav {
+      @if $phone {
+        display: none;
+      } @else {
+        display: flex;
+      }
       margin-top: auto;
       margin-bottom: 4rem;
     }
@@ -183,9 +187,9 @@
 
 @include media('<=phone') {
   $values: (
-    nav-width: 25rem,
-    avatar-size: 10rem,
-    hidden: false,
+    nav-width: 7.5rem,
+    avatar-size: 3rem,
+    hidden: true,
     landscape: false,
     phone: true
   );
@@ -195,9 +199,9 @@
 
 @include media('>=phone', '<=tablet') {
   $values: (
-    nav-width: 25rem,
-    avatar-size: 10rem,
-    hidden: false,
+    nav-width: 7.5rem,
+    avatar-size: 3rem,
+    hidden: true,
     landscape: false,
     phone: true
   );

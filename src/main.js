@@ -2,6 +2,7 @@ import 'font-awesome/css/font-awesome.css'
 import * as Bluebird from 'bluebird'
 import 'whatwg-fetch'
 import config from './config/app.config'
+import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 
 Bluebird.config({ warnings: false })
 
@@ -25,4 +26,6 @@ export async function configure(aurelia) {
 
   await aurelia.start()
   aurelia.setRoot(`app`)
+
+  OfflinePluginRuntime.install()
 }

@@ -7,7 +7,6 @@ import './profile.scss'
 @containerless
 @inject(Store, GitHub)
 export class Profile {
-  @bindable router
   id = `profile`
 
   constructor(store, github) {

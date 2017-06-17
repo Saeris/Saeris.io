@@ -1,12 +1,25 @@
 <template>
   <modal id.bind="id">
     <section>
-      <button click.delegate="toggleVisibility()"><i class="fa fa-remove"></i></button>
-      <img show.bind="profile.picture" src.bind="profile.picture" alt="Author's Picture">
+      <button click.delegate="toggleVisibility()">
+        <span>
+          <i class="fa fa-remove"></i>
+        </span>
+      </button>
+      <span class="avatar-wrapper">
+        <img show.bind="profile.picture" src.bind="profile.picture" alt="Author's Picture">
+      </span>
       <h1 if.bind="profile.name">${profile.name}</h1>
       <h2 if.bind="profile.title"><i class="fa fa-briefcase"></i>${profile.job}</h2>
       <h2 if.bind="profile.location"><i class="fa fa-map-marker"></i>${profile.location}</h2>
       <p if.bind="profile.bio">${profile.bio}</p>
+      <ul>
+        <li repeat.for="profile of services">
+          <a href.bind="profile.url" title="${profile.name}" target="_blank">
+            <i class="fa fa-${profile.icon}" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
     </section>
   </modal>
 </template>

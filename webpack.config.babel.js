@@ -22,6 +22,7 @@ import commonChunksOptimize from '@easy-webpack/config-common-chunks-simple'
 import copyFiles from '@easy-webpack/config-copy-files'
 //import uglify from '@easy-webpack/config-uglify'
 import generateCoverage from '@easy-webpack/config-test-coverage-istanbul'
+import offline from '@easy-webpack/config-offline'
 
 dotenv.config()
 
@@ -73,6 +74,21 @@ const coreBundles = {
   ]
 }
 
+const offlineConfig = {
+  caches: {
+    main: [`:rest:`],
+    additional: [`:externals:`],
+    optional: [`*.chunk.js`]
+  },
+  ServiceWorker: {
+    events: true
+  },
+  AppCache: {
+    caches: [`main`, `additional`, `optional`]
+  },
+  safeToUseOptionalCaches: true
+}
+
 /**
  * Main Webpack Configuration
  */
@@ -104,7 +120,7 @@ let config = generateConfig(
 
   babel(),
   html(),
-  sass({ allChunks: true, sourceMap: false, additionalLoaders: [`postcss-loader`] }),
+  sass({ filename: `app.css`, allChunks: true, sourceMap: false, additionalLoaders: [`postcss-loader`] }),
   css({ filename: `styles.css`, allChunks: true, sourceMap: false, additionalLoaders: [`postcss-loader`] }),
   fontAndImages(),
   globalBluebird(),
@@ -185,7 +201,9 @@ let config = generateConfig(
         EventAggregator: [`aurelia-event-aggregator`, `EventAggregator`]
       })
     ]
-  }
+  },
+
+  offline({ options: offlineConfig })
 )
 
 module.exports = stripMetadata(config)
