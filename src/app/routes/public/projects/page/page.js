@@ -1,4 +1,3 @@
-import { LogManager } from "aurelia-framework"
 import './page.scss'
 
 export class Page {

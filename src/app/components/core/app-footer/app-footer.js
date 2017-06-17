@@ -1,4 +1,3 @@
-import { customElement, containerless, LogManager } from 'aurelia-framework'
 import './app-footer.scss'
 
 @customElement(`app-footer`)

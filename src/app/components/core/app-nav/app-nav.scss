@@ -229,6 +229,18 @@
   @include styles($values...);
 }
 
+@include media('>=tablet', '<=desktop') {
+  $values: (
+    nav-width: 7.5rem,
+    avatar-size: 3rem,
+    hidden: true,
+    landscape: false,
+    phone: false
+  );
+
+  @include styles($values...);
+}
+
 @include media('>=desktop') {
   $values: (
     nav-width: 25rem,

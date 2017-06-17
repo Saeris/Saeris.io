@@ -1,4 +1,3 @@
-import { LogManager } from "aurelia-framework"
 import moment from 'moment'
 import './resume.scss'
 
@@ -24,10 +23,10 @@ export class Resume {
   		{ name: `JavaScript`, rating: 4, level: `Expert`, years: 5 },
 
   		{ name: `Aurelia`, rating: 4, level: `Expert`, years: 1 },
-  		{ name: `Redux`, rating: 1, level: `Beginner`, years: 1 },
-      { name: `Rx.js`, rating: 1, level: `Beginner`, years: 1 },
+      { name: `React`, rating: 1, level: `Beginner`, years: 1 },
+  		{ name: `Redux`, rating: 2, level: `Intermediate`, years: 1 },
 
-  		{ name: `GraphQL`, rating: 2, level: `Intermediate`, years: 1 },
+  		{ name: `GraphQL`, rating: 3, level: `Advanced`, years: 1 },
   		{ name: `Apollo`, rating: 2, level: `Intermediate`, years: 1 },
   		{ name: `Sass`, rating: 3, level: `Advanced`, years: 2 },
 
@@ -37,7 +36,7 @@ export class Resume {
 
   		{ name: `Snap.svg`, rating: 2, level: `Intermediate`, years: 1 },
   		{ name: `Bookshelf.js`, rating: 3, level: `Advanced`, years: 2 },
-  		{ name: `Passport.js`, rating: 2, level: `Intermediate`, years: 1 },
+  		{ name: `Passport.js`, rating: 1, level: `Beginner`, years: 1 },
 
   		{ name: `jQuery`, rating: 3, level: `Advanced`, years: 5 },
   		{ name: `PHP`, rating: 3, level: `Advanced`, years: 3 },

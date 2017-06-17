@@ -114,6 +114,14 @@
   @include styles($values...);
 }
 
+@include media('>=tablet', '<=desktop') {
+  $values: (
+    hidden: true
+  );
+
+  @include styles($values...);
+}
+
 @include media('>=desktop') {
   $values: (
     hidden: true

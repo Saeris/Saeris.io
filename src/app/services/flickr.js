@@ -1,4 +1,3 @@
-import { inject, LogManager } from "aurelia-framework"
 import Store from './store'
 import Album from '../models/album'
 import Photo from '../models/photo'

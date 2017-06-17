@@ -1,4 +1,3 @@
-import { LogManager } from "aurelia-framework"
 import './post.scss'
 
 export class Post {

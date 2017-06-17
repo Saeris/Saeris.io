@@ -1,4 +1,3 @@
-import { customElement, containerless, inject, LogManager } from 'aurelia-framework'
 import Utilities from '../../../services/utilities'
 import './scrollable.scss'
 

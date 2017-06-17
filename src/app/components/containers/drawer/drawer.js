@@ -1,4 +1,3 @@
-import { customElement, containerless, inject, bindable, LogManager } from 'aurelia-framework'
 import Store from '../../../services/store'
 
 @customElement(`drawer`)
