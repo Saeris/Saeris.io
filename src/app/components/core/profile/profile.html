@@ -15,7 +15,7 @@
       <p if.bind="profile.bio">${profile.bio}</p>
       <ul>
         <li repeat.for="profile of services">
-          <a href.bind="profile.url" title="${profile.name}" target="_blank">
+          <a href.bind="profile.url" title="${profile.name}" target="_blank" rel="noopener">
             <i class="fa fa-${profile.icon}" aria-hidden="true"></i>
           </a>
         </li>
