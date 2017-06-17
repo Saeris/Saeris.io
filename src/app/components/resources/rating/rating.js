@@ -1,4 +1,3 @@
-import { customElement, containerless, LogManager, bindable } from 'aurelia-framework'
 import './rating.scss'
 import img from '../../../../img/rating.svg'
 

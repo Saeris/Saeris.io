@@ -1,5 +1,3 @@
-import { customElement, containerless, inject, LogManager, bindable } from 'aurelia-framework'
-import { EventAggregator } from 'aurelia-event-aggregator'
 import Store from '../../../services/store'
 import './app-header.scss'
 

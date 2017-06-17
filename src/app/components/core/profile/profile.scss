@@ -1,6 +1,6 @@
 @import "../../../../sass/utils/include-media";
 
-@mixin styles($avatar-size) {
+@mixin styles($avatar-size, $phone) {
   #profile {
     position: fixed;
     background-image: url("../../../../img/bg.jpg");
@@ -16,11 +16,15 @@
       align-items: center;
       position: relative;
       background: #fff;
-      max-width: 375px;
-      margin: 15px auto;
-      border-radius: 3px;
+      @if $phone {
+        max-width: 29rem;
+      } @else {
+        max-width: 37.5rem;
+      }
+      margin: calc(3rem + (#{$avatar-size} / 2)) auto 1.5rem auto;
+      border-radius: 0.3rem;
       padding: calc(3rem + (#{$avatar-size} / 2)) 0 3rem 0;
-      box-shadow: 0 0 5px rgba(0,0,0,.5);
+      box-shadow: 0 0 0.5rem rgba(0,0,0,.5);
 
       button {
         position: absolute;
@@ -92,22 +96,97 @@
         flex: 1 1 auto;
         text-align: center;
         padding: 0 3rem;
+        margin-bottom: 3rem;
+      }
+
+      ul {
+        @if $phone {
+          display: flex;
+        } @else {
+          display: none;
+        }
+        justify-content: space-around;
+        width: 100%;
+        height: 3rem;
+        padding: 0 3rem;
+
+        li {
+          display: flex;
+          flex: 0 0 auto;
+          justify-content: center;
+          align-items: center;
+          width: 3rem;
+          height: 3rem;
+
+          a {
+            display: block;
+            color: #373a3c;
+            width: 100%;
+            height: 100%;
+            padding-top: 0;
+
+            i {
+              font-size: 3rem;
+              display: inline-block;
+              text-align: center;
+              width: 3rem;
+              height: 3rem;
+              line-height: 3rem;
+              padding-top: 0;
+              vertical-align: middle;
+            }
+
+            &:hover {
+              text-decoration: none;
+                color: #0c0c0c;
+            }
+          }
+        }
       }
     }
   }
 }
 
-@include media("<=desktop") {
+@include media('<=phone') {
   $values: (
-    avatar-size: 18rem
+    avatar-size: 18rem,
+    phone: true
   );
 
   @include styles($values...);
 }
 
-@include media(">desktop") {
+@include media('>=phone', '<=tablet') {
   $values: (
-    avatar-size: 18rem
+    avatar-size: 18rem,
+    phone: true
+  );
+
+  @include styles($values...);
+}
+
+@include media('>=tablet', '<=desktop', 'landscape', 'retina2x') {
+  $values: (
+    avatar-size: 18rem,
+    phone: false
+  );
+
+  @include styles($values...);
+}
+
+@include media('>=tablet', '<desktop', 'retina2x') {
+  $values: (
+    avatar-size: 18rem,
+    phone: false
+  );
+
+  @include styles($values...);
+}
+
+@include media('>=desktop') {
+  $values: (
+    avatar-size: 18rem,
+    phone: false
   );
 
   @include styles($values...);

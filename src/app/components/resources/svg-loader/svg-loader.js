@@ -1,4 +1,3 @@
-import { customElement, containerless, LogManager, bindable } from 'aurelia-framework'
 import './svg-loader.scss'
 
 @customElement(`svg-loader`)

@@ -1,4 +1,3 @@
-import { inject, LogManager } from 'aurelia-framework'
 import { Endpoint } from 'aurelia-api'
 import config from '../../config/app.config'
 

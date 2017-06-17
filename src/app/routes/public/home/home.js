@@ -1,4 +1,3 @@
-import { inject, LogManager } from "aurelia-framework"
 import Twitch from '../../../services/twitch'
 import './home.scss'
 

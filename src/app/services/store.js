@@ -1,7 +1,6 @@
-import { inject, LogManager } from "aurelia-framework"
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import { createEpicMiddleware, combineEpics } from 'redux-observable'
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs' //eslint-disable-line no-unused-vars
 import createLogger from 'redux-logger'
 import Apollo from './apollo'
 

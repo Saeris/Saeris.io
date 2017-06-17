@@ -1,4 +1,3 @@
-import { customElement, containerless, inject, bindable, LogManager } from 'aurelia-framework'
 import Store from '../../../services/store'
 import config from '../../../../config/app.config'
 import './app-nav.scss'

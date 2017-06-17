@@ -1,4 +1,3 @@
-import { customElement, containerless } from 'aurelia-framework'
 import './two-column.scss'
 
 @customElement(`two-column`)

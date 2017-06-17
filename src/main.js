@@ -1,5 +1,3 @@
-import { LogManager } from 'aurelia-framework'
-import { ConsoleAppender } from 'aurelia-logging-console'
 import 'font-awesome/css/font-awesome.css'
 import * as Bluebird from 'bluebird'
 import 'whatwg-fetch'
@@ -8,10 +6,9 @@ import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 
 Bluebird.config({ warnings: false })
 
-LogManager.addAppender(new ConsoleAppender())
 LogManager.setLevel(window.location.hostname.match(`localhost`)
-          ? LogManager.logLevel.debug
-          : LogManager.logLevel.error)
+  ? LogManager.logLevel.debug
+  : LogManager.logLevel.error)
 
 export async function configure(aurelia) {
   // Config

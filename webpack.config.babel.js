@@ -132,8 +132,8 @@ let config = generateConfig(
     commonChunksOptimize({appChunkName: `app`, firstChunk: `aurelia-bootstrap`}),
     //copyFiles({patterns: [{ from: `favicon.ico`, to: `favicon.ico` }]}),
     copyFiles({patterns: [
-      { context: `src/img`, from: `**/*`, to: `img` },
-      { from: `404.html`, to: `404.html` }
+      { from: `_redirects` },
+      { context: `src/img`, from: `**/*`, to: `img` }
     ]})
   ] : [
     /* ENV === 'test' */
@@ -185,11 +185,21 @@ let config = generateConfig(
     module: {
       rules: [
         { test: /\.(graphql|gql)$/, exclude: /node_modules/, loader: `graphql-tag/loader` },
-        { test: /\.ai$/, loader: `ignore-loader` }
+        { test: /\.ai$/, loader: `ignore-loader` },
+        { test: /\src\/images$/, loader: `ignore-loader` }
       ]
     },
     plugins: [
-      new webpack.EnvironmentPlugin([`API_KEY`, `FLICKR_API_KEY`, `FLICKR_USER`])
+      new webpack.EnvironmentPlugin([`API_KEY`, `FLICKR_API_KEY`, `FLICKR_USER`]),
+      new webpack.ProvidePlugin({
+        HttpClient: [`aurelia-fetch-client`, `HttpClient`],
+        bindable: [`aurelia-framework`, `bindable`],
+        customElement: [`aurelia-framework`, `customElement`],
+        containerless: [`aurelia-framework`, `containerless`],
+        LogManager: [`aurelia-framework`, `LogManager`],
+        inject: [`aurelia-framework`, `inject`],
+        EventAggregator: [`aurelia-event-aggregator`, `EventAggregator`]
+      })
     ]
   },
 

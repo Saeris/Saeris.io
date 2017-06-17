@@ -1,4 +1,3 @@
-import { LogManager } from "aurelia-framework"
 import './tags.scss'
 
 export class Tags {

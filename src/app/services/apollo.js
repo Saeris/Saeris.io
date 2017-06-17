@@ -6,7 +6,7 @@ export default class Apollo {
     // http://dev.apollodata.com/core/network.html
 
     // Configure the client to use the api provider from our api config
-    let networkInterface = createNetworkInterface({ uri: config.apollo.uri })
+    let networkInterface = createNetworkInterface({ uri: `http://localhost:1337/api` })
 
     // Add authorization tokens to our request headers before making calls to the api
     networkInterface.use([{

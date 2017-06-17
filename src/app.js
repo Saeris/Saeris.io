@@ -1,5 +1,3 @@
-import { inject, LogManager } from 'aurelia-framework'
-import { EventAggregator } from 'aurelia-event-aggregator'
 import Store from './app/services/store'
 import './sass/global.scss'
 
@@ -14,7 +12,7 @@ export class App {
 
   attached() {
     this.id = this.router.currentInstruction.config.name
-    this.subscription = this.ea.subscribe(`router:navigation:success`, this.navigationSuccess.bind(this))
+    this.subscription = this.ea.subscribe(`router:navigation:success`, ::this.navigationSuccess)
   }
 
   detached() {

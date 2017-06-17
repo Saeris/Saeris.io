@@ -1,4 +1,3 @@
-import { inject, LogManager } from 'aurelia-framework'
 import Apollo from '../../../services/apollo'
 import query from './test.gql'
 import './test.scss'

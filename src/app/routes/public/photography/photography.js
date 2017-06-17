@@ -1,4 +1,3 @@
-import { inject, LogManager } from "aurelia-framework"
 import Flickr from '../../../services/flickr'
 import './photography.scss'
 

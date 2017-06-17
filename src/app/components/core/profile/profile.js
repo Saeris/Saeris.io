@@ -1,4 +1,3 @@
-import { customElement, containerless, inject, bindable, LogManager } from 'aurelia-framework'
 import GitHub from 'github-api'
 import Store from '../../../services/store'
 import config from '../../../../config/app.config'
@@ -8,7 +7,6 @@ import './profile.scss'
 @containerless
 @inject(Store, GitHub)
 export class Profile {
-  @bindable router
   id = `profile`
 
   constructor(store, github) {
