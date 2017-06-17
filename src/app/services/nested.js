@@ -1,3 +1,4 @@
+  const debounce = (func, threshold, execAsap) => {
 (($, sr) => {
   const debounce = (func, threshold, execAsap) => {
     let timeout
