@@ -4,7 +4,7 @@
     <h2>${resume.headline}</h2>
     <ul>
       <li repeat.for="link of resume.contact.links">
-        <a href.bind="link.url" target="_blank"><i class="fa fa-${link.icon}"></i>${link.title}</a>
+        <a href.bind="link.url" target="_blank" rel="noopener"><i class="fa fa-${link.icon}"></i>${link.title}</a>
       </li>
     </ul>
   </section>
@@ -78,7 +78,7 @@
       <li repeat.for="project of resume.projects">
         <div class="header">
           <h4>${project.name}<strong if.bind="project.url"> | </strong></h4>
-          <h5><a href.bind="project.url" target="_blank">${project.url}</a></h5>
+          <h5><a href.bind="project.url" target="_blank" rel="noopener">${project.url}</a></h5>
           <span>
             <h6>${project.start} – ${project.end}<em if.bind="(project.start && project.end)"> (~${getDuration(project.start, project.end)})</em></h6>
           </span>

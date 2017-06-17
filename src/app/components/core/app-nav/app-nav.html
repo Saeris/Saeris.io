@@ -21,7 +21,7 @@
 
         <ul id="socialnav" class="nav-links">
           <li repeat.for="profile of services">
-            <a href.bind="profile.url" title="${profile.name}" target="_blank">
+            <a href.bind="profile.url" title="${profile.name}" target="_blank" rel="noopener">
               <i class="fa fa-${profile.icon}" aria-hidden="true"></i>
               <span>${profile.name}</span>
             </a>

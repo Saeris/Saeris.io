@@ -65,9 +65,9 @@ export class Resume {
   		summary: `Originally looking to hire a lead-level engineer, 4-Tell brought me on board to help them build their new Insights product. As the sole Front-End developer on the team, I was tasked with architecting the platform on which this new product would be built and translating their early designs into a working application. Ultimately it was decided that the scope of this project was more than what someone of my level of experience would be able to deliver in the company's exceedingly tight schedule.`,
   		tags: [`Aurelia`, `Webpack`, `Redux`, `Sass`, `SPA`, `Microsoft Azure`, `Buddy.works`, `Continuous Integration`, `Project Documentation`, `Platform Architecture`],
   		highlights: [
-        `Independently architected a single-page application platform using <a href='http://aurelia.io/' target='_blank'>Aurelia<\/a>, Redux, and <a href='http://dev.apollodata.com/' target='_blank'>Apollo<\/a> to build a next-generation online retail analytics product.`,
-        `Worked with a team of back-end engineers to develop a modern <a href='http://graphql.org/' target='_blank'>GraphQL<\/a> powered API service strategy going forward.`,
-        `Responsible for implementing a continuous integration pipeline using <a href='https://buddy.works/' target='_blank'>Buddy.works<\/a> deploying to a Microsoft Azure web app, as well as instituting structured contribution guidelines following the <a href='http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/' target='_blank'>Git-Flow<\/a> model. Additionally introduced the team to <a href='https://www.gitkraken.com/' target='_blank'>GitKraken<\/a>, resulting in an improved Git commit process company wide, reducing time spent digging through documentation.`,
+        `Independently architected a single-page application platform using <a href='http://aurelia.io/' target='_blank' rel='noopener'>Aurelia<\/a>, Redux, and <a href='http://dev.apollodata.com/' target='_blank' rel='noopener'>Apollo<\/a> to build a next-generation online retail analytics product.`,
+        `Worked with a team of back-end engineers to develop a modern <a href='http://graphql.org/' target='_blank' rel='noopener'>GraphQL<\/a> powered API service strategy going forward.`,
+        `Responsible for implementing a continuous integration pipeline using <a href='https://buddy.works/' target='_blank' rel='noopener'>Buddy.works<\/a> deploying to a Microsoft Azure web app, as well as instituting structured contribution guidelines following the <a href='http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/' target='_blank' rel='noopener'>Git-Flow<\/a> model. Additionally introduced the team to <a href='https://www.gitkraken.com/' target='_blank'  rel='noopener'>GitKraken<\/a>, resulting in an improved Git commit process company wide, reducing time spent digging through documentation.`,
         `Wrote detailed project documentation designed to quickly bring new developers up to speed with the project architecture, coding standards, and conventions necessary for working on an enterprise scale Aurelia project.`,
         `Translated provided UI mockups into working interfaces including: Login, Site Selection, Dashboard Navigation, Site Analytics Summary and Details pages, as well as router configuration.`
       ],
@@ -89,7 +89,7 @@ export class Resume {
   			end: `January 2016`,
   			tags: [`Apache Velocity`, `Liferay`, `Intellij IDEA`, `Flexbox`, `Git`, `Grunt`, `Java`, `Sass`],
   			highlights: [
-  				`Responsible for front-end development of password recovery, message center, and member dashboard pages for <a href='https://www.regence.com/web/regence_individual/' target='_blank'>Regence BlueCross<\/a> and <a href='https://www.asuris.com/' target='_blank'>Asuris Health<\/a>.`,
+  				`Responsible for front-end development of password recovery, message center, and member dashboard pages for <a href='https://www.regence.com/web/regence_individual/' target='_blank'  rel='noopener'>Regence BlueCross<\/a> and <a href='https://www.asuris.com/' target='_blank'  rel='noopener'>Asuris Health<\/a>.`,
   				`Trained fellow developers in the use of CSS Flexbox, resulting in faster development, cleaner, more maintainable markup, and a significantly more responsive mobile experience.`,
   				`Audited the front-end build chain and helped implement more efficient use of Node modules, Grunt and SASS. Upgrading to NPM 3 cut duplicate files down from roughly 2.6 million (6+ Gb) to under 30 thousand (250 Mb). As a result, full builds take 15 minutes down from over 1 hour.`
 			  ]
@@ -116,8 +116,8 @@ export class Resume {
   		tags: [`AJAX`, `Bugzilla`, `Front-End Web Development`, `JavaScript`, `jQuery`, `SVG`, `UI Design`, `UX Design`],
   		highlights: [
   			`Programmed a browser extension using jQuery and AJAX to automate common tasks for the production team, resulting in hundreds of work hours saved and drastically reduced error rates.`,
-  			`Coded the front-end for the Nicole Miller IBM Watson powered search results prototype shown at CES 2015. As a result, Sellpoints received a <a href='https://www-03.ibm.com/press/us/en/pressrelease/46950.wss' target='_blank'>$7.5 million Series C investment from IBM<\/>.`,
-  			`Updated Sellpoints’ collection of raster callout icons to a modern, vector-based icon font which will allow for greater customization, faster page load times, and a more consistent experience across a range of devices in the future. Result: <a href='http://saeris.github.io/sellpoints_i2/demo.html' target='_blank'>227 customizable glyphs delivered in 2 http requests, totaling 39kb/50ms<\/a>.`
+  			`Coded the front-end for the Nicole Miller IBM Watson powered search results prototype shown at CES 2015. As a result, Sellpoints received a <a href='https://www-03.ibm.com/press/us/en/pressrelease/46950.wss' target='_blank'  rel='noopener'>$7.5 million Series C investment from IBM<\/>.`,
+  			`Updated Sellpoints’ collection of raster callout icons to a modern, vector-based icon font which will allow for greater customization, faster page load times, and a more consistent experience across a range of devices in the future. Result: <a href='http://saeris.github.io/sellpoints_i2/demo.html' target='_blank'  rel='noopener'>227 customizable glyphs delivered in 2 http requests, totaling 39kb/50ms<\/a>.`
   		],
   		assignments: []
   	}, {
@@ -129,7 +129,7 @@ export class Resume {
   		summary: `After years of creating custom maps and helping to grow the mod community for StarCraft 2, Blizzard gave me the opportunity to take my work to the next level. Chosen as one of 40+ interns from a pool of nearly 10k applicants, I was a Multiplayer Level Design Intern for the StarCraft 2 team on Heart of the Swarm. My experience at Blizzard was transformative and gave me invaluable insight into the world of software and video game development.`,
   		tags: [`Agile`, `Balance Design`, `Game Design`, `Level Design`, `Multiplayer Design`, `StarCraft 2 Galaxy Editor`, `Tortoise SVN`],
   		highlights: [
-  			`Designed <a href='http://wiki.teamliquid.net/starcraft2/Atlas_Station' target='_blank'>3<\/a> <a href='http://wiki.teamliquid.net/starcraft2/Sky_Harvester' target='_blank'>multiplayer<\/a> <a href='http://wiki.teamliquid.net/starcraft2/Vault_of_Secrets' target='_blank'>maps<\/a> which shipped with Heart of the Swarm. Each was part of the official ladder where they were played millions of times, earned high ratings and praise for fostering innovative play.`,
+  			`Designed <a href='http://wiki.teamliquid.net/starcraft2/Atlas_Station' target='_blank' rel='noopener'>3<\/a> <a href='http://wiki.teamliquid.net/starcraft2/Sky_Harvester' target='_blank'  rel='noopener'>multiplayer<\/a> <a href='http://wiki.teamliquid.net/starcraft2/Vault_of_Secrets' target='_blank'  rel='noopener'>maps<\/a> which shipped with Heart of the Swarm. Each was part of the official ladder where they were played millions of times, earned high ratings and praise for fostering innovative play.`,
   			`Pitched and contributed to the development of the ‘Data Navigator’ visualization tool, which assists developers and fans in understanding the complex structure of game assets, speeding their creation.`,
   			`Helped develop new community engagement strategies. As a result developers now communicate directly with mod developers, helping to both educate the community and resolve tools related bugs faster.`
   		],
@@ -154,7 +154,7 @@ export class Resume {
       summary: ``,
       highlights: [
         `A Magic: The Gathering collection management & deck building application built in Aurelia, written in ES6/ES2016, using Webpack for task management/bundling, Apollo as it's API service client, Redux for state management, Sass for styling, and Rx.js observables.`,
-        `Currently features an API micro-service to build and send requests to the <a href='https://docs.magicthegathering.io/' target='_blank'>Magic: The Gathering Developers API<\/a> that uses modern JavaScript features such as template strings, Async/Await and performs automatic caching. This will later be replaced by Apollo and the Scribe GraphQL backend also in development.`,
+        `Currently features an API micro-service to build and send requests to the <a href='https://docs.magicthegathering.io/' target='_blank' rel='noopener'>Magic: The Gathering Developers API<\/a> that uses modern JavaScript features such as template strings, Async/Await and performs automatic caching. This will later be replaced by Apollo and the Scribe GraphQL backend also in development.`,
         `Utilizes Regular Expressions to parse rules text and apply formatting, convert mana and set symbol codes into icons, and build out lists of keywords for categorization.`
       ]
     }, {
@@ -191,7 +191,7 @@ export class Resume {
   		highlights: [
   			`Datamining project composed of a game modification that tracks over 100 data points and outputs them to an XML log file, and a PHP/MySQL based website designed to demonstrate analytical techniques.`,
   			`Completely self-designed and built from scratch, this project was both a proof of concept and an effort to familiarize myself with the tools and techniques needed to build an enterprise-level web application.`,
-  			`The project has been entirely open-sourced and published to <a href='https://github.com/Saeris/SC2MDCL' target='_blank'>Github<\/a> and work on a new <a href='https://github.com/Saeris/Yamato-Electron' target='_blank'>JavaScript/SPA version<\/a> has begun.`
+  			`The project has been entirely open-sourced and published to <a href='https://github.com/Saeris/SC2MDCL' target='_blank' rel='noopener'>Github<\/a> and work on a new <a href='https://github.com/Saeris/Yamato-Electron' target='_blank' rel='noopener'>JavaScript/SPA version<\/a> has begun.`
   		]
   	}],
 

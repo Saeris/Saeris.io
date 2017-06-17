@@ -488,6 +488,21 @@
   @include styles($values...);
 }
 
+@include media('>=tablet', '<desktop') {
+  $values: (
+    title-padding: 6rem 0 2rem 0,
+    name-size: 4.8rem,
+    name-height: 5rem,
+    title-size: 3.33rem,
+    title-height: 3rem,
+    content-max-width: 128rem,
+    skill-margin: 0.5rem,
+    skill-width: 4
+  );
+
+  @include styles($values...);
+}
+
 @include media('>=desktop') {
   $values: (
     title-padding: 6rem 0 2rem 0,
