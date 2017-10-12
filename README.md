@@ -1,5 +1,7 @@
 # Saeris.io
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Saeris/Saeris.io.svg)](https://greenkeeper.io/)
+
 ## Documentation
 
 For detailed project documentation, please refer to the directory of guides.
